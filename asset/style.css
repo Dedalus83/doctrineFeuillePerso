@@ -1,0 +1,67 @@
+p {
+    margin-left: 3em;
+    margin-right: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.3em;
+}
+
+.carousel-control-next-icon{
+    background-image: url("right.png");
+}
+
+.carousel-control-prev-icon{
+    background-image: url("left.png");
+}
+
+.carousel-control-next, .carousel-control-prev {
+    margin: -11em;
+}
+
+[data-dynamic-input] {
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    width: 100%;
+    display: flex;
+}
+
+span{
+    font-weight: bold;
+    text-transform: lowercase;
+    font-size: 0.9em;
+    
+}
+
+h2{
+    font-weight: bold;
+    font-size: 2em;
+}
+
+h1{
+    font-weight: bold;
+    font-size: 3em;
+}
+
+.separator{
+    border: black solid 0.6em;
+    background-color: black;
+    border-radius: 50px;
+}
+
+span .value{
+    margin-left: 1em;
+    margin-top: 0.3em;
+}
+
+.border{
+    border-radius: 7px;
+}
+
+.error{
+    font-weight: bold;
+    text-align: center;
+    color: red;
+}

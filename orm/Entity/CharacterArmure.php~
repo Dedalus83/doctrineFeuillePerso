@@ -1,0 +1,34 @@
+<?php
+
+namespace orm\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * CharacterArmure
+ *
+ * @ORM\Table(name="characterArmure")
+ * @ORM\Entity
+ */
+class CharacterArmure extends Armure
+{
+    /**
+     * @var \orm\Entity\Armure
+     *
+     * @ORM\ManyToOne(targetEntity="orm\Entity\Armure", inversedBy="characterArmure")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="magie_id", referencedColumnName="id", nullable=true)
+     * })
+     */
+    private $armure;
+
+    /**
+     * @var \orm\Entity\Character
+     *
+     * @ORM\ManyToOne(targetEntity="orm\Entity\Character", inversedBy="characterArmure")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="character_id", referencedColumnName="id", nullable=true)
+     * })
+     */
+    private $character;
+}

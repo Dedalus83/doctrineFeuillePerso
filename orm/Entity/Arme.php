@@ -1,0 +1,325 @@
+<?php
+
+namespace orm\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Arme
+ *
+ * @ORM\Table(name="armes")
+ * @ORM\Entity
+ */
+class Arme
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="qualite", type="string", precision=0, scale=0, nullable=false, unique=false)
+     */
+    private $qualite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", precision=0, scale=0, nullable=false, unique=false)
+     */
+    private $nom;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="degats", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     */
+    private $degats;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="critique", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     */
+    private $critique;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="resistance", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     */
+    private $resistance;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="bonusParade", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     */
+    private $bonusParade;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="degatSurRes", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     */
+    private $degatSurRes;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="tauxDestruction", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     */
+    private $tauxDestruction;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="amelioration", type="string", precision=0, scale=0, nullable=true, unique=false)
+     */
+    private $amelioration;
+
+
+    /**
+     * Get id.
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set qualite.
+     *
+     * @param string $qualite
+     *
+     * @return Arme
+     */
+    public function setQualite($qualite)
+    {
+        $this->qualite = $qualite;
+
+        return $this;
+    }
+
+    /**
+     * Get qualite.
+     *
+     * @return string
+     */
+    public function getQualite()
+    {
+        return $this->qualite;
+    }
+
+    /**
+     * Set nom.
+     *
+     * @param string $nom
+     *
+     * @return Arme
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom.
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set degats.
+     *
+     * @param int $degats
+     *
+     * @return Arme
+     */
+    public function setDegats($degats)
+    {
+        $this->degats = $degats;
+
+        return $this;
+    }
+
+    /**
+     * Get degats.
+     *
+     * @return int
+     */
+    public function getDegats()
+    {
+        return $this->degats;
+    }
+
+    /**
+     * Set critique.
+     *
+     * @param int $critique
+     *
+     * @return Arme
+     */
+    public function setCritique($critique)
+    {
+        $this->critique = $critique;
+
+        return $this;
+    }
+
+    /**
+     * Get critique.
+     *
+     * @return int
+     */
+    public function getCritique()
+    {
+        return $this->critique;
+    }
+
+    /**
+     * Set resistance.
+     *
+     * @param int $resistance
+     *
+     * @return Arme
+     */
+    public function setResistance($resistance)
+    {
+        $this->resistance = $resistance;
+
+        return $this;
+    }
+
+    /**
+     * Get resistance.
+     *
+     * @return int
+     */
+    public function getResistance()
+    {
+        return $this->resistance;
+    }
+
+    /**
+     * Set bonusParade.
+     *
+     * @param int $bonusParade
+     *
+     * @return Arme
+     */
+    public function setBonusParade($bonusParade)
+    {
+        $this->bonusParade = $bonusParade;
+
+        return $this;
+    }
+
+    /**
+     * Get bonusParade.
+     *
+     * @return int
+     */
+    public function getBonusParade()
+    {
+        return $this->bonusParade;
+    }
+
+    /**
+     * Set degatSurRes.
+     *
+     * @param int $degatSurRes
+     *
+     * @return Arme
+     */
+    public function setDegatSurRes($degatSurRes)
+    {
+        $this->degatSurRes = $degatSurRes;
+
+        return $this;
+    }
+
+    /**
+     * Get degatSurRes.
+     *
+     * @return int
+     */
+    public function getDegatSurRes()
+    {
+        return $this->degatSurRes;
+    }
+
+    /**
+     * Set tauxDestruction.
+     *
+     * @param int $tauxDestruction
+     *
+     * @return Arme
+     */
+    public function setTauxDestruction($tauxDestruction)
+    {
+        $this->tauxDestruction = $tauxDestruction;
+
+        return $this;
+    }
+
+    /**
+     * Get tauxDestruction.
+     *
+     * @return int
+     */
+    public function getTauxDestruction()
+    {
+        return $this->tauxDestruction;
+    }
+
+    /**
+     * Set amelioration.
+     *
+     * @param string|null $amelioration
+     *
+     * @return Arme
+     */
+    public function setAmelioration($amelioration = null)
+    {
+        $this->amelioration = $amelioration;
+
+        return $this;
+    }
+
+    /**
+     * Get amelioration.
+     *
+     * @return string|null
+     */
+    public function getAmelioration()
+    {
+        return $this->amelioration;
+    }
+
+    public function copyFrom($arme){
+        $this->setQualite($arme->getNom());
+        $this->setNom($arme->getNom());
+        $this->setDegats($arme->getDegats());
+        $this->setCritique($arme->getCritique());
+        $this->setResistance($arme->getResistance());
+        $this->setBonusParade($arme->getBonusParade());
+        $this->setDegatSurRes($arme->getDegatSurRes());
+        $this->setTauxDestruction($arme->getTauxDestruction());
+        $this->setAmelioration($arme->getAmelioration());
+    }
+}
