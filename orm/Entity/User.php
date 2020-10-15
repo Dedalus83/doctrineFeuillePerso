@@ -57,6 +57,13 @@ class User
     private $email;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="checked", type="boolean", precision=0, scale=0, nullable=false, unique=false)
+     */
+    private $checked;
+
+    /**
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\ManyToMany(targetEntity="orm\Entity\character")
@@ -207,6 +214,30 @@ class User
     public function getEmail()
     {
         return $this->email;
+    }
+
+    /**
+     * Get checked.
+     *
+     * @return boolean
+     */
+    public function getChecked()
+    {
+        return $this->checked;
+    }
+
+    /**
+     * Set checked.
+     *
+     * @param string $checked
+     *
+     * @return User
+     */
+    public function setChecked($checked)
+    {
+        $this->checked = $checked;
+
+        return $this;
     }
 
     /**

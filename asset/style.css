@@ -65,3 +65,8 @@ span .value{
     text-align: center;
     color: red;
 }
+
+.form-check-inline {
+    margin-top: 2.7em;
+}
+
