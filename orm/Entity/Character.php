@@ -3,6 +3,8 @@
 namespace orm\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\OneToOne;
+
 
 /**
  * Character
@@ -342,6 +344,9 @@ class Character
      * @ORM\OneToMany(targetEntity="orm\Entity\CharacterArmure", mappedBy="character")
      */
     private $characterArmure;
+
+    /** @OneToOne(targetEntity="Argent") */
+    private $argent;
 
 
     /**
@@ -1543,5 +1548,40 @@ class Character
         return $this->characterArmure;
     }
 
+    // /**
+    //  * Add argent.
+    //  *
+    //  * @param \orm\Entity\Argent $argent
+    //  *
+    //  * @return Argent
+    //  */
+    // public function addArgent(\orm\Entity\Argent $argent)
+    // {
+    //     $this->argent[] = $argent;
+
+    //     return $this;
+    // }
+
+    // /**
+    //  * Remove argent.
+    //  *
+    //  * @param \orm\Entity\Argent $argent
+    //  *
+    //  * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+    //  */
+    // public function removeArgent(\orm\Entity\Argent $argent)
+    // {
+    //     return $this->argent->removeElement($argent);
+    // }
+
+    /**
+     * Get argent.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArgent()
+    {
+        return $this->argent;
+    }
 
 }

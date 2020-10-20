@@ -12,6 +12,17 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class CharacterArmure extends Armure
 {
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="id", type="string")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="CUSTOM")
+     * @ORM\CustomIdGenerator(class="orm\Generator\IdGenerator")
+     */
+    private $id;
+    
       /**
      * Set armure.
      *

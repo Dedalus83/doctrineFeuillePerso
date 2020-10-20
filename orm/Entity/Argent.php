@@ -3,6 +3,7 @@
 namespace orm\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\OneToOne;
 
 /**
  * Argent
@@ -63,8 +64,8 @@ class Argent
      */
     private $placement;
 
-   
-
+   /** @OneToOne(targetEntity="Character") */
+    private $character;
 
     /**
      * Get id.

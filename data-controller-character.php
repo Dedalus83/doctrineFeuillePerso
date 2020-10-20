@@ -37,6 +37,8 @@ $inventaires = clone $character->getCharacterInventaire();
 
 $magies = clone $character->getCharacterMagie();
 
+$argents = $character->getArgent();
+
 $magieRepo = $entityManager->getRepository(Magie::class);
 $magics = $magieRepo->findAll();
 
@@ -71,8 +73,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           $characterMagie->copyFrom($magie);
           $characterMagie->setCharacter($character);
           $characterMagie->setMagie($magie);
-          // $characterMagie->setId("magieNum".$magie->getId());
-
           $entityManager->persist($characterMagie);
           $entityManager->flush();
        }

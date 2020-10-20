@@ -14,6 +14,16 @@ class CharacterMagie extends Magie
 {
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="id", type="string")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="CUSTOM")
+     * @ORM\CustomIdGenerator(class="orm\Generator\IdGenerator")
+     */
+    private $id;
+
+    /**
      * Get magie.
      *
      * @return \orm\Entity\Magie|null

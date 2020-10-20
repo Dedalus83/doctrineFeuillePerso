@@ -13,11 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
 class Don
 {
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="id", type="string")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="CUSTOM")
+     * @ORM\CustomIdGenerator(class="orm\Generator\IdGenerator")
      */
     private $id;
 
