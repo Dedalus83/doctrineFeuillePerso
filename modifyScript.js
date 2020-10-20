@@ -12,6 +12,8 @@ $allBox.forEach($box =>{
 
 $allFields.forEach($field => {
     const entityId = $field.getAttribute("data-dynamic-id");
+    const fieldEntity = $field.getAttribute("data-dynamic-entity");
+    const fieldName = $field.getAttribute("data-dynamic-input");
     const fieldValue = $field.textContent;
     resetField();
 
