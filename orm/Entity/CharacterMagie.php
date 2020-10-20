@@ -12,8 +12,30 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class CharacterMagie extends Magie
 {
-    
-    private $magie;
+
+    /**
+     * Get magie.
+     *
+     * @return \orm\Entity\Magie|null
+     */
+    public function getMagie()
+    {
+        return $this->magie;
+    }
+
+    /**
+     * Set magie.
+     *
+     * @param \orm\Entity\Magie|null $magie
+     *
+     * @return CharacterMagie
+     */
+    public function setMagie(\orm\Entity\Magie $magie = null)
+    {
+        $this->magie = $magie;
+
+        return $this;
+    }
 
     /**
      * @var \orm\Entity\Character
@@ -25,23 +47,15 @@ class CharacterMagie extends Magie
      */
     private $character;
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        
-    }
-
 
     /**
-     * Add character.
+     * Set character.
      *
-     * @param \orm\Entity\Character $character
+     * @param \orm\Entity\Character|null $character
      *
      * @return CharacterMagie
      */
-    public function setCharacter(\orm\Entity\Character $character)
+    public function setCharacter(\orm\Entity\Character $character = null)
     {
         $this->character = $character;
 
@@ -51,34 +65,12 @@ class CharacterMagie extends Magie
     /**
      * Get character.
      *
-     * @return \orm\Entity\Character
+     * @return \orm\Entity\Character|null
      */
     public function getCharacter()
     {
         return $this->character;
     }
 
-    /**
-     * Add magie.
-     *
-     * @param \orm\Entity\Magie $magie
-     *
-     * @return CharacterMagie
-     */
-    public function setMagie(\orm\Entity\Magie $magie)
-    {
-        $this->magie = $magie;
-
-        return $this;
-    }
-
-    /**
-     * Get magie.
-     *
-     * @return \orm\Entity\Magie
-     */
-    public function getMagie()
-    {
-        return $this->magie;
-    }
+    
 }

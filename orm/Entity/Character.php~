@@ -315,130 +315,41 @@ class Character
      */
     private $characterCompetence;
 
-     /**
+    /**
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\OneToMany(targetEntity="orm\Entity\CharacterInventaire", mappedBy="character")
      */
     private $characterInventaire;
 
-     /**
+    /**
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\OneToMany(targetEntity="orm\Entity\CharacterDon", mappedBy="character")
      */
     private $characterDon;
 
-     /**
+    /**
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\OneToMany(targetEntity="orm\Entity\CharacterArme", mappedBy="character")
      */
     private $characterArme;
 
-     /**
+    /**
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\OneToMany(targetEntity="orm\Entity\CharacterArmure", mappedBy="character")
      */
     private $characterArmure;
 
-     /**
+    /**
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\OneToMany(targetEntity="orm\Entity\CharacterArgent", mappedBy="character")
      */
     private $characterArgent;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="orm\Entity\arme")
-     * @ORM\JoinTable(name="character_arme",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="character_id", referencedColumnName="id", nullable=true)
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="arme_id", referencedColumnName="id", nullable=true)
-     *   }
-     * )
-     */
-    private $arme;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="orm\Entity\armure")
-     * @ORM\JoinTable(name="character_armure",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="character_id", referencedColumnName="id", nullable=true)
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="armure_id", referencedColumnName="id", nullable=true)
-     *   }
-     * )
-     */
-    private $armure;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="orm\Entity\don")
-     * @ORM\JoinTable(name="character_don",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="character_id", referencedColumnName="id", nullable=true)
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="don_id", referencedColumnName="id", nullable=true)
-     *   }
-     * )
-     */
-    private $don;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="orm\Entity\competence")
-     * @ORM\JoinTable(name="character_competence",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="character_id", referencedColumnName="id", nullable=true)
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="competence_id", referencedColumnName="id", nullable=true)
-     *   }
-     * )
-     */
-    private $competence;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="orm\Entity\argent")
-     * @ORM\JoinTable(name="character_argent",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="character_id", referencedColumnName="id", nullable=true)
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="argent_id", referencedColumnName="id", nullable=true)
-     *   }
-     * )
-     */
-    private $argent;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="orm\Entity\inventaire")
-     * @ORM\JoinTable(name="character_inventaire",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="character_id", referencedColumnName="id", nullable=true)
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="inventaire_id", referencedColumnName="id", nullable=true)
-     *   }
-     * )
-     */
-    private $inventaire;
 
     /**
      * Constructor
@@ -446,12 +357,12 @@ class Character
     public function __construct()
     {
         $this->characterMagie = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->arme = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->armure = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->don = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->competence = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->argent = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->inventaire = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->characterCompetence = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->characterInventaire = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->characterDon = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->characterArme = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->characterArmure = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->characterArgent = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -1461,218 +1372,218 @@ class Character
     }
 
     /**
-     * Add arme.
+     * Add characterCompetence.
      *
-     * @param \orm\Entity\arme $arme
+     * @param \orm\Entity\CharacterCompetence $characterCompetence
      *
      * @return Character
      */
-    public function addArme(\orm\Entity\arme $arme)
+    public function addCharacterCompetence(\orm\Entity\CharacterCompetence $characterCompetence)
     {
-        $this->arme[] = $arme;
+        $this->characterCompetence[] = $characterCompetence;
 
         return $this;
     }
 
     /**
-     * Remove arme.
+     * Remove characterCompetence.
      *
-     * @param \orm\Entity\arme $arme
+     * @param \orm\Entity\CharacterCompetence $characterCompetence
      *
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeArme(\orm\Entity\arme $arme)
+    public function removeCharacterCompetence(\orm\Entity\CharacterCompetence $characterCompetence)
     {
-        return $this->arme->removeElement($arme);
+        return $this->characterCompetence->removeElement($characterCompetence);
     }
 
     /**
-     * Get arme.
+     * Get characterCompetence.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getArme()
+    public function getCharacterCompetence()
     {
-        return $this->arme;
+        return $this->characterCompetence;
     }
 
     /**
-     * Add armure.
+     * Add characterInventaire.
      *
-     * @param \orm\Entity\armure $armure
+     * @param \orm\Entity\CharacterInventaire $characterInventaire
      *
      * @return Character
      */
-    public function addArmure(\orm\Entity\armure $armure)
+    public function addCharacterInventaire(\orm\Entity\CharacterInventaire $characterInventaire)
     {
-        $this->armure[] = $armure;
+        $this->characterInventaire[] = $characterInventaire;
 
         return $this;
     }
 
     /**
-     * Remove armure.
+     * Remove characterInventaire.
      *
-     * @param \orm\Entity\armure $armure
+     * @param \orm\Entity\CharacterInventaire $characterInventaire
      *
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeArmure(\orm\Entity\armure $armure)
+    public function removeCharacterInventaire(\orm\Entity\CharacterInventaire $characterInventaire)
     {
-        return $this->armure->removeElement($armure);
+        return $this->characterInventaire->removeElement($characterInventaire);
     }
 
     /**
-     * Get armure.
+     * Get characterInventaire.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getArmure()
+    public function getCharacterInventaire()
     {
-        return $this->armure;
+        return $this->characterInventaire;
     }
 
     /**
-     * Add don.
+     * Add characterDon.
      *
-     * @param \orm\Entity\don $don
+     * @param \orm\Entity\CharacterDon $characterDon
      *
      * @return Character
      */
-    public function addDon(\orm\Entity\don $don)
+    public function addCharacterDon(\orm\Entity\CharacterDon $characterDon)
     {
-        $this->don[] = $don;
+        $this->characterDon[] = $characterDon;
 
         return $this;
     }
 
     /**
-     * Remove don.
+     * Remove characterDon.
      *
-     * @param \orm\Entity\don $don
+     * @param \orm\Entity\CharacterDon $characterDon
      *
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeDon(\orm\Entity\don $don)
+    public function removeCharacterDon(\orm\Entity\CharacterDon $characterDon)
     {
-        return $this->don->removeElement($don);
+        return $this->characterDon->removeElement($characterDon);
     }
 
     /**
-     * Get don.
+     * Get characterDon.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getDon()
+    public function getCharacterDon()
     {
-        return $this->don;
+        return $this->characterDon;
     }
 
     /**
-     * Add competence.
+     * Add characterArme.
      *
-     * @param \orm\Entity\competence $competence
+     * @param \orm\Entity\CharacterArme $characterArme
      *
      * @return Character
      */
-    public function addCompetence(\orm\Entity\competence $competence)
+    public function addCharacterArme(\orm\Entity\CharacterArme $characterArme)
     {
-        $this->competence[] = $competence;
+        $this->characterArme[] = $characterArme;
 
         return $this;
     }
 
     /**
-     * Remove competence.
+     * Remove characterArme.
      *
-     * @param \orm\Entity\competence $competence
+     * @param \orm\Entity\CharacterArme $characterArme
      *
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeCompetence(\orm\Entity\competence $competence)
+    public function removeCharacterArme(\orm\Entity\CharacterArme $characterArme)
     {
-        return $this->competence->removeElement($competence);
+        return $this->characterArme->removeElement($characterArme);
     }
 
     /**
-     * Get competence.
+     * Get characterArme.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getCompetence()
+    public function getCharacterArme()
     {
-        return $this->competence;
+        return $this->characterArme;
     }
 
     /**
-     * Add argent.
+     * Add characterArmure.
      *
-     * @param \orm\Entity\argent $argent
+     * @param \orm\Entity\CharacterArmure $characterArmure
      *
      * @return Character
      */
-    public function addArgent(\orm\Entity\argent $argent)
+    public function addCharacterArmure(\orm\Entity\CharacterArmure $characterArmure)
     {
-        $this->argent[] = $argent;
+        $this->characterArmure[] = $characterArmure;
 
         return $this;
     }
 
     /**
-     * Remove argent.
+     * Remove characterArmure.
      *
-     * @param \orm\Entity\argent $argent
+     * @param \orm\Entity\CharacterArmure $characterArmure
      *
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeArgent(\orm\Entity\argent $argent)
+    public function removeCharacterArmure(\orm\Entity\CharacterArmure $characterArmure)
     {
-        return $this->argent->removeElement($argent);
+        return $this->characterArmure->removeElement($characterArmure);
     }
 
     /**
-     * Get argent.
+     * Get characterArmure.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getArgent()
+    public function getCharacterArmure()
     {
-        return $this->argent;
+        return $this->characterArmure;
     }
 
     /**
-     * Add inventaire.
+     * Add characterArgent.
      *
-     * @param \orm\Entity\inventaire $inventaire
+     * @param \orm\Entity\CharacterArgent $characterArgent
      *
      * @return Character
      */
-    public function addInventaire(\orm\Entity\inventaire $inventaire)
+    public function addCharacterArgent(\orm\Entity\CharacterArgent $characterArgent)
     {
-        $this->inventaire[] = $inventaire;
+        $this->characterArgent[] = $characterArgent;
 
         return $this;
     }
 
     /**
-     * Remove inventaire.
+     * Remove characterArgent.
      *
-     * @param \orm\Entity\inventaire $inventaire
+     * @param \orm\Entity\CharacterArgent $characterArgent
      *
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeInventaire(\orm\Entity\inventaire $inventaire)
+    public function removeCharacterArgent(\orm\Entity\CharacterArgent $characterArgent)
     {
-        return $this->inventaire->removeElement($inventaire);
+        return $this->characterArgent->removeElement($characterArgent);
     }
 
     /**
-     * Get inventaire.
+     * Get characterArgent.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getInventaire()
+    public function getCharacterArgent()
     {
-        return $this->inventaire;
+        return $this->characterArgent;
     }
 }

@@ -13,11 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
 class Magie
 {
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="id", type="integer", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="id", type="string")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\GeneratedValue(strategy="CUSTOM")
+     * @ORM\CustomIdGenerator(class="orm\Generator\IdGenerator")
      */
     private $id;
 
@@ -88,11 +89,25 @@ class Magie
     /**
      * Get id.
      *
-     * @return int
+     * @return string
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set id.
+     *
+     * @param string $id
+     *
+     * @return Magie
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     /**
@@ -312,6 +327,7 @@ class Magie
     }
 
     public function copyFrom($magie){
+        // $this->setId($magie->getId());
         $this->setType($magie->getType());
         $this->setNom($magie->getNom());
         $this->setDescription($magie->getDescription());

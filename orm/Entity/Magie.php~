@@ -19,7 +19,7 @@ class Magie
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    protected $id;
+    private $id;
 
     /**
      * @var string
@@ -84,13 +84,6 @@ class Magie
      */
     private $effet;
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        
-    }
 
     /**
      * Get id.
@@ -319,17 +312,14 @@ class Magie
     }
 
     public function copyFrom($magie){
-        
         $this->setType($magie->getType());
         $this->setNom($magie->getNom());
         $this->setDescription($magie->getDescription());
         $this->setDegats($magie->getDegats());
         $this->setCritique($magie->getCritique());
-        $this->setMalus($magie->getMalus());
         $this->setMana($magie->getMana());
+        $this->setMalus($magie->getMalus());
         $this->setNombre($magie->getNombre());
         $this->setEffet($magie->getEffet());
-
-        return $magie;
     }
 }

@@ -126,17 +126,8 @@ class Inventaire
     }
 
     public function copyFrom($inventaire){
-        
-        $this->setType($inventaire->getType());
         $this->setNom($inventaire->getNom());
         $this->setDescription($inventaire->getDescription());
-        $this->setDegats($inventaire->getDegats());
-        $this->setCritique($inventaire->getCritique());
-        $this->setMalus($inventaire->getMalus());
-        $this->setMana($inventaire->getMana());
         $this->setNombre($inventaire->getNombre());
-        $this->setEffet($inventaire->getEffet());
-
-        return $inventaire;
     }
-}
+} 

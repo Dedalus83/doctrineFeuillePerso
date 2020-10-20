@@ -46,7 +46,7 @@ include 'function.php';
                 <select class="form-control" id="Select" name="value">
                   <option>Ajoutez une magie</option>     
                <?php foreach ($magics as $magic) {?>
-                  <option value= "<?=$magic->getId()?>" > <?=$magic->getNom()?></option>
+                  <option value= "<?=$magic->getId()?>" > <?=get_class($magic)?> <?=$magic->getNom()?></option>
                <?php }?>
                 </select>
                 <input class='btn btn-primary' type='submit' name='validate' value='valider'>

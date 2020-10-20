@@ -14,7 +14,6 @@ use orm\Entity\CharacterDon;
 use orm\Entity\CharacterArme;
 use orm\Entity\CharacterArmure;
 use orm\Entity\CharacterInventaire;
-use orm\Entity\CharacterArgent;
 use orm\Entity\User;
 
 $entityManager = require_once join(DIRECTORY_SEPARATOR, [__DIR__, 'bootstrap.php']);
@@ -22,7 +21,6 @@ $entityManager = require_once join(DIRECTORY_SEPARATOR, [__DIR__, 'bootstrap.php
 $userRepo = $entityManager->getRepository(User::class);
 $user = $userRepo->find($_SESSION['id']);
 
-// Affichage
 $characters = $user->getCharacter();
 
 $character = $characters[0];
@@ -38,9 +36,6 @@ $competences = clone $character->getCharacterCompetence();
 $inventaires = clone $character->getCharacterInventaire();
 
 $magies = clone $character->getCharacterMagie();
-
-$argents = clone $character->getCharacterArgent();
-
 
 $magieRepo = $entityManager->getRepository(Magie::class);
 $magics = $magieRepo->findAll();
@@ -60,9 +55,6 @@ $armors = $armureRepo->findAll();
 $inventaireRepo = $entityManager->getRepository(Inventaire::class);
 $inventories = $inventaireRepo->findAll();
 
-$argentRepo = $entityManager->getRepository(Argent::class);
-$money = $argentRepo->findAll();
-
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if(isset($_POST['validate']))
@@ -79,6 +71,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           $characterMagie->copyFrom($magie);
           $characterMagie->setCharacter($character);
           $characterMagie->setMagie($magie);
+          // $characterMagie->setId("magieNum".$magie->getId());
+
           $entityManager->persist($characterMagie);
           $entityManager->flush();
        }
@@ -186,7 +180,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $entityManager->persist($entityDynamic);
         $entityManager->flush();
        }
-     }   
+     } Header('Location: '.$_SERVER['PHP_SELF']);  
   }
 ?>
 

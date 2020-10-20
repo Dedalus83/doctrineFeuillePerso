@@ -95,17 +95,7 @@ class Don
     }
 
     public function copyFrom($don){
-        
-        $this->setType($don->getType());
         $this->setNom($don->getNom());
         $this->setDescription($don->getDescription());
-        $this->setDegats($don->getDegats());
-        $this->setCritique($don->getCritique());
-        $this->setMalus($don->getMalus());
-        $this->setMana($don->getMana());
-        $this->setNombre($don->getNombre());
-        $this->setEffet($don->getEffet());
-
-        return $don;
     }
 }

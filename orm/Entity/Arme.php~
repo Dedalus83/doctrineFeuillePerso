@@ -310,19 +310,16 @@ class Arme
     {
         return $this->amelioration;
     }
-    
+
     public function copyFrom($arme){
-        
-        $this->setType($arme->getType());
+        $this->setQualite($arme->getQualite());
         $this->setNom($arme->getNom());
-        $this->setDescription($arme->getDescription());
         $this->setDegats($arme->getDegats());
         $this->setCritique($arme->getCritique());
-        $this->setMalus($arme->getMalus());
-        $this->setMana($arme->getMana());
-        $this->setNombre($arme->getNombre());
-        $this->setEffet($arme->getEffet());
-
-        return $arme;
+        $this->setResistance($arme->getResistance());
+        $this->setBonusParade($arme->getBonusParade());
+        $this->setDegatSurRes($arme->getDegatSurRes());
+        $this->setTauxDestruction($arme->getTauxDestruction());
+        $this->setAmelioration($arme->getAmelioration());
     }
 }

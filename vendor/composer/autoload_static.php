@@ -14,6 +14,7 @@ class ComposerStaticInita8d4d81fe5aa31553dc3d15c57903fe7
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -32,6 +33,10 @@ class ComposerStaticInita8d4d81fe5aa31553dc3d15c57903fe7
             'Symfony\\Contracts\\Service\\' => 26,
             'Symfony\\Component\\String\\' => 25,
             'Symfony\\Component\\Console\\' => 26,
+        ),
+        'R' => 
+        array (
+            'Ramsey\\Uuid\\' => 12,
         ),
         'P' => 
         array (
@@ -95,13 +100,17 @@ class ComposerStaticInita8d4d81fe5aa31553dc3d15c57903fe7
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Ramsey\\Uuid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/uuid/src',
+        ),
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
         'PackageVersions\\' => 
         array (
-            0 => __DIR__ . '/..' . '/ocramius/package-versions/src/PackageVersions',
+            0 => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions',
         ),
         'Doctrine\\Persistence\\' => 
         array (

@@ -17,7 +17,7 @@ class CharacterArme extends Arme
      *
      * @ORM\ManyToOne(targetEntity="orm\Entity\Arme", inversedBy="characterArme")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="magie_id", referencedColumnName="id", nullable=true)
+     *   @ORM\JoinColumn(name="arme_id", referencedColumnName="id", nullable=true)
      * })
      */
     private $arme;
@@ -31,4 +31,53 @@ class CharacterArme extends Arme
      * })
      */
     private $character;
+
+
+    /**
+     * Set arme.
+     *
+     * @param \orm\Entity\Arme|null $arme
+     *
+     * @return CharacterArme
+     */
+    public function setArme(\orm\Entity\Arme $arme = null)
+    {
+        $this->arme = $arme;
+
+        return $this;
+    }
+
+    /**
+     * Get arme.
+     *
+     * @return \orm\Entity\Arme|null
+     */
+    public function getArme()
+    {
+        return $this->arme;
+    }
+
+    /**
+     * Set character.
+     *
+     * @param \orm\Entity\Character|null $character
+     *
+     * @return CharacterArme
+     */
+    public function setCharacter(\orm\Entity\Character $character = null)
+    {
+        $this->character = $character;
+
+        return $this;
+    }
+
+    /**
+     * Get character.
+     *
+     * @return \orm\Entity\Character|null
+     */
+    public function getCharacter()
+    {
+        return $this->character;
+    }
 }

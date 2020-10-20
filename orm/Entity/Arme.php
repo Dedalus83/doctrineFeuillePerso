@@ -310,9 +310,8 @@ class Arme
     {
         return $this->amelioration;
     }
-
     public function copyFrom($arme){
-        $this->setQualite($arme->getNom());
+        $this->setQualite($arme->getQualite());
         $this->setNom($arme->getNom());
         $this->setDegats($arme->getDegats());
         $this->setCritique($arme->getCritique());

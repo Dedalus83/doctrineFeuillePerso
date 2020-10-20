@@ -124,10 +124,4 @@ class Inventaire
     {
         return $this->nombre;
     }
-
-    public function copyFrom($inventaire){
-        $this->setNom($inventaire->getNom());
-        $this->setDescription($inventaire->getDescription());
-        $this->setNombre($inventaire->getNombre());
-    }
 }

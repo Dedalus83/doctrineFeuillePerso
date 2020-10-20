@@ -12,26 +12,15 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class CharacterInventaire extends Inventaire
 {
-    /**
-     * @var \orm\Entity\Inventaire
+   /**
+     * Get inventaire.
      *
-     * @ORM\ManyToOne(targetEntity="orm\Entity\Inventaire", inversedBy="characterInventaire")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="inventaire_id", referencedColumnName="id", nullable=true)
-     * })
+     * @return \orm\Entity\Inventaire|null
      */
-    private $inventaire;
-
-    /**
-     * @var \orm\Entity\Character
-     *
-     * @ORM\ManyToOne(targetEntity="orm\Entity\Character", inversedBy="characterInventaire")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="character_id", referencedColumnName="id", nullable=true)
-     * })
-     */
-    private $character;
-
+    public function getInventaire()
+    {
+        return $this->inventaire;
+    }
 
     /**
      * Set inventaire.
@@ -48,14 +37,15 @@ class CharacterInventaire extends Inventaire
     }
 
     /**
-     * Get inventaire.
+     * @var \orm\Entity\Character
      *
-     * @return \orm\Entity\Inventaire|null
+     * @ORM\ManyToOne(targetEntity="orm\Entity\Character", inversedBy="characterInventaire")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="character_id", referencedColumnName="id", nullable=true)
+     * })
      */
-    public function getInventaire()
-    {
-        return $this->inventaire;
-    }
+    private $character;
+
 
     /**
      * Set character.
@@ -71,13 +61,12 @@ class CharacterInventaire extends Inventaire
         return $this;
     }
 
-    /**
-     * Get character.
-     *
-     * @return \orm\Entity\Character|null
-     */
-    public function getCharacter()
-    {
-        return $this->character;
+    
+
+    public function copyFrom($inventaire){
+        $this->setNom($inventaire->getNom());
+        $this->setDescription($inventaire->getDescription());
+        $this->setNombre($inventaire->getNombre());
+        
     }
 }

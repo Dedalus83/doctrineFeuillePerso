@@ -13,32 +13,11 @@ use Doctrine\ORM\Mapping as ORM;
 class CharacterDon extends Don
 {
     /**
-     * @var \orm\Entity\Don
-     *
-     * @ORM\ManyToOne(targetEntity="orm\Entity\Don", inversedBy="characterDon")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="don_id", referencedColumnName="id", nullable=true)
-     * })
-     */
-    private $don;
-
-    /**
-     * @var \orm\Entity\Character
-     *
-     * @ORM\ManyToOne(targetEntity="orm\Entity\Character", inversedBy="characterDon")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="character_id", referencedColumnName="id", nullable=true)
-     * })
-     */
-    private $character;
-
-
-    /**
      * Set don.
      *
      * @param \orm\Entity\Don|null $don
      *
-     * @return CharacterDon
+     * @return CharacterDon 
      */
     public function setDon(\orm\Entity\Don $don = null)
     {
@@ -56,6 +35,16 @@ class CharacterDon extends Don
     {
         return $this->don;
     }
+
+    /**
+     * @var \orm\Entity\Character
+     *
+     * @ORM\ManyToOne(targetEntity="orm\Entity\Character", inversedBy="characterDon")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="character_id", referencedColumnName="id", nullable=true)
+     * })
+     */
+    private $character;
 
     /**
      * Set character.

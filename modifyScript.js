@@ -58,17 +58,17 @@ $allFields.forEach($field => {
             $key.disabled = true;
       });
     }; 
-    $switchOff.addEventListener('click', switchOff)
+    // $switchOff.addEventListener('click', switchOff)
 
-    const $switchOn = document.querySelector("#switchOn");
-    const $activedButton = document.querySelectorAll("button");
+    // const $switchOn = document.querySelector("#switchOn");
+    // const $activedButton = document.querySelectorAll("button");
 
     
-    function switchOn(){ 
-        $activedButton.forEach($key => {
-            $key.disabled = false;
-      });
-    }; 
-    $switchOn.addEventListener('click', switchOn)
+    // function switchOn(){ 
+    //     $activedButton.forEach($key => {
+    //         $key.disabled = false;
+    //   });
+    // }; 
+    // $switchOn.addEventListener('click', switchOn)
    
    

@@ -13,27 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class CharacterCompetence extends Competence
 {
     /**
-     * @var \orm\Entity\Competence
-     *
-     * @ORM\ManyToOne(targetEntity="orm\Entity\Competence", inversedBy="characterCompetence")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="competence_id", referencedColumnName="id", nullable=true)
-     * })
-     */ 
-    private $competence;
-
-    /**
-     * @var \orm\Entity\Character
-     *
-     * @ORM\ManyToOne(targetEntity="orm\Entity\Character", inversedBy="characterCompetence")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="character_id", referencedColumnName="id", nullable=true)
-     * })
-     */
-    private $character;
-
-
-    /**
      * Set competence.
      *
      * @param \orm\Entity\Competence|null $competence
@@ -56,6 +35,16 @@ class CharacterCompetence extends Competence
     {
         return $this->competence;
     }
+
+    /**
+     * @var \orm\Entity\Character
+     *
+     * @ORM\ManyToOne(targetEntity="orm\Entity\Character", inversedBy="characterCompetence")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="character_id", referencedColumnName="id", nullable=true)
+     * })
+     */
+    private $character;
 
     /**
      * Set character.

@@ -13,25 +13,14 @@ use Doctrine\ORM\Mapping as ORM;
 class CharacterArme extends Arme
 {
     /**
-     * @var \orm\Entity\Arme
+     * Get arme.
      *
-     * @ORM\ManyToOne(targetEntity="orm\Entity\Arme", inversedBy="characterArme")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="arme_id", referencedColumnName="id", nullable=true)
-     * })
+     * @return \orm\Entity\Arme|null
      */
-    private $arme;
-
-    /**
-     * @var \orm\Entity\Character
-     *
-     * @ORM\ManyToOne(targetEntity="orm\Entity\Character", inversedBy="characterArme")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="character_id", referencedColumnName="id", nullable=true)
-     * })
-     */
-    private $character;
-
+    public function getArme()
+    {
+        return $this->arme;
+    }
 
     /**
      * Set arme.
@@ -48,14 +37,14 @@ class CharacterArme extends Arme
     }
 
     /**
-     * Get arme.
+     * @var \orm\Entity\Character
      *
-     * @return \orm\Entity\Arme|null
+     * @ORM\ManyToOne(targetEntity="orm\Entity\Character", inversedBy="characterArme")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="character_id", referencedColumnName="id", nullable=true)
+     * })
      */
-    public function getArme()
-    {
-        return $this->arme;
-    }
+    private $character;
 
     /**
      * Set character.

@@ -17,7 +17,7 @@ class CharacterDon extends Don
      *
      * @ORM\ManyToOne(targetEntity="orm\Entity\Don", inversedBy="characterDon")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="magie_id", referencedColumnName="id", nullable=true)
+     *   @ORM\JoinColumn(name="don_id", referencedColumnName="id", nullable=true)
      * })
      */
     private $don;
@@ -31,4 +31,53 @@ class CharacterDon extends Don
      * })
      */
     private $character;
+
+
+    /**
+     * Set don.
+     *
+     * @param \orm\Entity\Don|null $don
+     *
+     * @return CharacterDon
+     */
+    public function setDon(\orm\Entity\Don $don = null)
+    {
+        $this->don = $don;
+
+        return $this;
+    }
+
+    /**
+     * Get don.
+     *
+     * @return \orm\Entity\Don|null
+     */
+    public function getDon()
+    {
+        return $this->don;
+    }
+
+    /**
+     * Set character.
+     *
+     * @param \orm\Entity\Character|null $character
+     *
+     * @return CharacterDon
+     */
+    public function setCharacter(\orm\Entity\Character $character = null)
+    {
+        $this->character = $character;
+
+        return $this;
+    }
+
+    /**
+     * Get character.
+     *
+     * @return \orm\Entity\Character|null
+     */
+    public function getCharacter()
+    {
+        return $this->character;
+    }
 }

@@ -12,28 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class CharacterArmure extends Armure
 {
-    /**
-     * @var \orm\Entity\Armure
-     *
-     * @ORM\ManyToOne(targetEntity="orm\Entity\Armure", inversedBy="characterArmure")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="armure_id", referencedColumnName="id", nullable=true)
-     * })
-     */
-    private $armure;
-
-    /**
-     * @var \orm\Entity\Character
-     *
-     * @ORM\ManyToOne(targetEntity="orm\Entity\Character", inversedBy="characterArmure")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="character_id", referencedColumnName="id", nullable=true)
-     * })
-     */
-    private $character;
-
-
-    /**
+      /**
      * Set armure.
      *
      * @param \orm\Entity\Armure|null $armure
@@ -56,6 +35,19 @@ class CharacterArmure extends Armure
     {
         return $this->armure;
     }
+
+    /**
+     * @var \orm\Entity\Character
+     *
+     * @ORM\ManyToOne(targetEntity="orm\Entity\Character", inversedBy="characterArmure")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="character_id", referencedColumnName="id", nullable=true)
+     * })
+     */
+    private $character;
+
+
+  
 
     /**
      * Set character.

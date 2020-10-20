@@ -64,16 +64,16 @@ class Armure
     private $malusEsquive;
 
     /**
-     * @var int|null
+     * @var string|null
      *
-     * @ORM\Column(name="amelioration1", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="amelioration1", type="string", precision=0, scale=0, nullable=true, unique=false)
      */
     private $amelioration1;
 
     /**
-     * @var int|null
+     * @var string|null
      *
-     * @ORM\Column(name="amelioration2", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="amelioration2", type="string", precision=0, scale=0, nullable=true, unique=false)
      */
     private $amelioration2;
 
@@ -312,17 +312,14 @@ class Armure
     }
 
     public function copyFrom($armure){
-        
-        $this->setType($armure->getType());
+        $this->setQualite($armure->getQualite());
         $this->setNom($armure->getNom());
-        $this->setDescription($armure->getDescription());
-        $this->setDegats($armure->getDegats());
-        $this->setCritique($armure->getCritique());
-        $this->setMalus($armure->getMalus());
-        $this->setMana($armure->getMana());
-        $this->setNombre($armure->getNombre());
-        $this->setEffet($armure->getEffet());
-
-        return $armure;
+        $this->setVie($armure->getVie());
+        $this->setResilience($armure->getResilience());
+        $this->setResistance($armure->getResistance());
+        $this->setMalusEsquive($armure->getMalusEsquive());
+        $this->setAmelioration1($armure->getAmelioration1());
+        $this->setAmelioration2($armure->getAmelioration2());
+        $this->setAmelioration3($armure->getAmelioration3());
     }
 }

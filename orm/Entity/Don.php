@@ -93,7 +93,6 @@ class Don
     {
         return $this->description;
     }
-
     public function copyFrom($don){
         $this->setNom($don->getNom());
         $this->setDescription($don->getDescription());

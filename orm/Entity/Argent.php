@@ -63,6 +63,8 @@ class Argent
      */
     private $placement;
 
+   
+
 
     /**
      * Get id.
@@ -217,4 +219,5 @@ class Argent
     {
         return $this->placement;
     }
+
 }

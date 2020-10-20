@@ -57,7 +57,7 @@ class User
     private $email;
 
     /**
-     * @var boolean
+     * @var bool
      *
      * @ORM\Column(name="checked", type="boolean", precision=0, scale=0, nullable=false, unique=false)
      */
@@ -217,19 +217,9 @@ class User
     }
 
     /**
-     * Get checked.
-     *
-     * @return boolean
-     */
-    public function getChecked()
-    {
-        return $this->checked;
-    }
-
-    /**
      * Set checked.
      *
-     * @param string $checked
+     * @param bool $checked
      *
      * @return User
      */
@@ -238,6 +228,16 @@ class User
         $this->checked = $checked;
 
         return $this;
+    }
+
+    /**
+     * Get checked.
+     *
+     * @return bool
+     */
+    public function getChecked()
+    {
+        return $this->checked;
     }
 
     /**

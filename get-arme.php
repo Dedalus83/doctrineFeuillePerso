@@ -8,4 +8,5 @@
       <p>Dégâts sur Resistance: <span class="border border-primary" <?= dynamicInputAttributes("degatSurRes", $arme, 'number'); ?>><?=htmlentities($arme->getDegatSurRes())?></span></p>
       <p>Taux de Destruction: <span class="border border-primary" <?= dynamicInputAttributes("tauxDestruction", $arme, 'number'); ?>><?=htmlentities($arme->getTauxDestruction())?> %</span></p>
       <p>Amélioration: <span class="border border-primary" <?= dynamicInputAttributes("amelioration", $arme); ?>><?=htmlentities($arme->getAmelioration())?></span></p>
-<?php } ?> 
+      <div class="separator"></div>
+<?php } ?>  

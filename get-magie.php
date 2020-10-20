@@ -10,5 +10,5 @@ foreach ($magies as $magie) { ?>
       <p>Mana: <span class="border border-primary" <?= dynamicInputAttributes("mana", $magie, 'number'); ?>><?=htmlentities($magie->getMana())?></span></p>
       <p>Nombre: <span class="border border-primary" <?= dynamicInputAttributes("nombre", $magie, 'number'); ?>><?=htmlentities($magie->getNombre())?></span></p>
       <p>Effet: <span class="border border-primary" <?= dynamicInputAttributes("effet", $magie); ?>><?=htmlentities($magie->getEffet())?></span></p>
-      <div class="separator"></div>
+      <div class="separator"></div> 
 <?php } ?>

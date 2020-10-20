@@ -64,16 +64,16 @@ class Armure
     private $malusEsquive;
 
     /**
-     * @var int|null
+     * @var string|null
      *
-     * @ORM\Column(name="amelioration1", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="amelioration1", type="string", precision=0, scale=0, nullable=true, unique=false)
      */
     private $amelioration1;
 
     /**
-     * @var int|null
+     * @var string|null
      *
-     * @ORM\Column(name="amelioration2", type="integer", precision=0, scale=0, nullable=true, unique=false)
+     * @ORM\Column(name="amelioration2", type="string", precision=0, scale=0, nullable=true, unique=false)
      */
     private $amelioration2;
 
@@ -242,7 +242,7 @@ class Armure
     /**
      * Set amelioration1.
      *
-     * @param int|null $amelioration1
+     * @param string|null $amelioration1
      *
      * @return Armure
      */
@@ -256,7 +256,7 @@ class Armure
     /**
      * Get amelioration1.
      *
-     * @return int|null
+     * @return string|null
      */
     public function getAmelioration1()
     {
@@ -266,7 +266,7 @@ class Armure
     /**
      * Set amelioration2.
      *
-     * @param int|null $amelioration2
+     * @param string|null $amelioration2
      *
      * @return Armure
      */
@@ -280,7 +280,7 @@ class Armure
     /**
      * Get amelioration2.
      *
-     * @return int|null
+     * @return string|null
      */
     public function getAmelioration2()
     {
@@ -310,7 +310,6 @@ class Armure
     {
         return $this->amelioration3;
     }
-
     public function copyFrom($armure){
         $this->setQualite($armure->getNom());
         $this->setNom($armure->getNom());

@@ -217,19 +217,4 @@ class Argent
     {
         return $this->placement;
     }
-
-    public function copyFrom($argent){
-        
-        $this->setType($argent->getType());
-        $this->setNom($argent->getNom());
-        $this->setDescription($argent->getDescription());
-        $this->setDegats($argent->getDegats());
-        $this->setCritique($argent->getCritique());
-        $this->setMalus($argent->getMalus());
-        $this->setMana($argent->getMana());
-        $this->setNombre($argent->getNombre());
-        $this->setEffet($argent->getEffet());
-
-        return $argent;
-    }
 }

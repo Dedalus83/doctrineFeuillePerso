@@ -93,7 +93,6 @@ class Competence
     {
         return $this->description;
     }
-
     public function copyFrom($competence){
         $this->setNom($competence->getNom());
         $this->setDescription($competence->getDescription());
