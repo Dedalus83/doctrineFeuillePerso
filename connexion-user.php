@@ -52,7 +52,7 @@ if (isset($_POST['valider'])) {
             </form>
             <?php
             if (isset($erreur)) {
-                echo '<div class="error">' . $erreur . "</div>";
+                echo '<div>'. 'Vous n\'avez pas de personnage:'.' '.'<a href="create-character.php">'.'Créer un personnage'.'</a>'. $erreur . "</div>";
             }
             ?>
         </div>

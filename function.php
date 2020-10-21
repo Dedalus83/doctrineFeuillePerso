@@ -5,8 +5,6 @@ function dynamicInputAttributes($name, $entity, $type = "string"){
     return " data-dynamic-input=\"$name\" data-dynamic-type=\"$type\" data-dynamic-entity=\"$className\" data-dynamic-id=\"$entityId\" ";
 };
 
-
 function isSwitchChecked($value, $modifyActivated){
     return $modifyActivated === $value ? "checked" : "";
 }
-

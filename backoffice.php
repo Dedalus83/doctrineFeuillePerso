@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["switch"]) && isset($_P
   <label class="form-check-label" for="switch">Désactiver</label>
 </div>
 <input class='btn btn-primary' type='submit' name='valider' value='valider'>
-   
+<input type=hidden id=varPass value=<?php echo $modifyActivated; ?>/>
 </form>
 <?php }?>
     

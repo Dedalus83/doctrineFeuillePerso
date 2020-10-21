@@ -1,14 +1,4 @@
 const $allFields = document.querySelectorAll("[data-dynamic-input]");
-const $allBox = document.querySelectorAll("span.box");
-
-$allBox.forEach($box =>{
-
- $spanBox = $box.getElementsByClassName("box");
-
-}
-    );
-
-   
 
 $allFields.forEach($field => {
     const entityId = $field.getAttribute("data-dynamic-id");
@@ -50,3 +40,10 @@ $allFields.forEach($field => {
         addButton();
     };
 });
+
+function toggle($data){ 
+    const allButton = document.querySelectorAll("button");
+    allButton.forEach($button => {
+        $button.disabled = !$data
+    })  
+};

@@ -1,7 +1,7 @@
 <?php
 session_start();
-include 'data-controller-character.php';
-include 'function.php';
+require('data-controller-character.php');
+require('function.php');
 
 ?>
 <!DOCTYPE html>
@@ -19,27 +19,28 @@ include 'function.php';
       <?php require('header.php') ?>
         <br><br>
         <h1>PERSONNAGE de <?php echo $_SESSION['pseudo'] ?></h1>
+        <input type="hidden" id="result">
         <br><br>
    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
    <div class="carousel-inner">
     <div class="carousel-item active" data-interval="false">
     <h2>Caractéristiques Principales</h2>
       <div class="col">
-         <?php include "get-main-character.php";?>
+         <?php require("get-main-character.php");?>
       </div>
     </div>
     <div class="carousel-item" data-interval="false">
     <h2>Caractéristiques Physiques</h2>
-         <?php include "get-physical-character.php";?>
+         <?php require("get-physical-character.php");?>
     </div>
     <div class="carousel-item" data-interval="false">
     <h2>Caractéristiques Magiques</h2>
-         <?php include "get-magic-character.php";?>
+         <?php require("get-magic-character.php");?>
     </div>
     <div class="carousel-item" data-interval="false">
 
     <h2>Pouvoirs Magiques</h2>
-      <?php include "get-magie.php";?>
+      <?php require("get-magie.php");?>
       <form method="post">
          <div class="form-group">
             <select class="form-control" id="Select" name="value">
@@ -55,7 +56,7 @@ include 'function.php';
 
 <div class="carousel-item" data-interval="false">
    <h2>Compétences</h2>
-     <?php include "get-competence.php";?>
+     <?php require("get-competence.php");?>
       <form method="post">
         <div class="form-group">
            <select class="form-control" name="value">
@@ -71,7 +72,7 @@ include 'function.php';
 
 <div class="carousel-item" data-interval="false">
    <h2>Dons Raciaux</h2>
-    <?php include "get-don.php";?>
+    <?php require("get-don.php");?>
    <form method="post">
       <div class="form-group">
          <select class="form-control" name="value">
@@ -87,7 +88,7 @@ include 'function.php';
 
 <div class="carousel-item" data-interval="false">
    <h2>Armes</h2>
-      <?php include "get-arme.php";?>
+      <?php require("get-arme.php");?>
    <form method="post">
       <div class="form-group">
          <select class="form-control" name="value">
@@ -103,7 +104,7 @@ include 'function.php';
 
 <div class="carousel-item" data-interval="false">
    <h2>Armures</h2>
-    <?php include "get-armure.php";?>
+    <?php require("get-armure.php");?>
    <form method="post">
       <div class="form-group">
          <select class="form-control" name="value">
@@ -119,12 +120,12 @@ include 'function.php';
 
 <div class="carousel-item" data-interval="false">
    <h2>Informations Bancaires</h2>
-    <?php include "get-argent.php";?>
+    <?php require("get-argent.php");?>
 </div>
 
 <div class="carousel-item" data-interval="false">
    <h2>Inventaire</h2>
-    <?php include "get-inventaire.php";?>
+    <?php require("get-inventaire.php");?>
    <form method="post">
       <div class="form-group">
          <select class="form-control" name="value">
@@ -149,16 +150,10 @@ include 'function.php';
   </a>
 </div>
 
-<?php
-$modifyActivated = $user->getChecked();
-?>
-
-<?php if($modifyActivated){ ?>
-    <script src='modifyScript.js'></script>
-<?php } ?>
-       
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    </body>
+      <script src='modifyScript.js'></script>
+      <script src="sse.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+   </body>
 </html>
