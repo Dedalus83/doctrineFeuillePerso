@@ -14,7 +14,7 @@ if (isset($_POST['valider'])) {
             $_SESSION['id'] = $userInfo['id'];
             $_SESSION['pseudo'] = $userInfo['pseudo'];
             $_SESSION['mail'] = $userInfo['email'];
-            header("Location:associate-character.php?id=" . $_SESSION['id']);
+            header("Location:create-character.php?id=" . $_SESSION['id']);
         } else {
             $erreur = "Mauvais pseudo ou mot de passe !";
         }
@@ -34,7 +34,7 @@ if (isset($_POST['valider'])) {
     <body>
         <div class="container">
             <br /><br /><br />
-            <h1>CONNEXION</h1>
+            <h1>Coonectez vous pour créer votre personnage</h1>
             <br /><br /><br /><br /><br /><br /><br />
             <form method="POST" action="">
                 <div class="col">

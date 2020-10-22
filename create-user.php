@@ -1,6 +1,4 @@
 <?php
-# create-user.php
-
 $entityManager = require_once join(DIRECTORY_SEPARATOR, [__DIR__, 'bootstrap.php']);
 
 use orm\Entity\User;
@@ -33,9 +31,12 @@ if(isset($_POST['valider'])) {
                     $create->setPassword($pass);
                     $create->setEmail($email);
                 
-                    // Gestion de la persistance
                     $entityManager->persist($create);
                     $entityManager->flush();
+
+                    session_start(); 
+                    $_SESSION['id'] = $create->getId();
+                    header("Location:create-character.php");
 
                      $erreur = "Votre compte a bien été créé ! <a href=\"connexion-user.php\">Me connecter</a>";
                   } else {

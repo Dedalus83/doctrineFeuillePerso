@@ -1,7 +1,11 @@
 <?php
+session_start();
 $entityManager = require_once join(DIRECTORY_SEPARATOR, [__DIR__, 'bootstrap.php']);
 
 use orm\Entity\Character;
+use orm\Entity\User;
+
+$bdd = new PDO('mysql:host=localhost;dbname=infoperso;charset=utf8', 'root', '');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
@@ -50,7 +54,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $entityManager->persist($create);
     $entityManager->flush();
 
-    echo "Identifiant de l'utilisateur créé : ", $create->getId();
+    $identity = $_SESSION['id'];
+    $character = $create->getId();
+    $requete = $bdd->query("INSERT INTO character_user SET character_id=$identity, user_id=$character");
+
+    
+    header("Location:connexion-user.php?id=" . $_SESSION['id']);
   }
 
 ?>
