@@ -14,7 +14,7 @@ if (isset($_POST['valider'])) {
             $_SESSION['id'] = $userInfo['id'];
             $_SESSION['pseudo'] = $userInfo['pseudo'];
             $_SESSION['mail'] = $userInfo['email'];
-            header("Location:associate-character.php?id=" . $_SESSION['id']);
+            header("Location:characterPage.php?id=" . $_SESSION['id']);
         } else {
             $erreur = "Mauvais pseudo ou mot de passe !";
         }

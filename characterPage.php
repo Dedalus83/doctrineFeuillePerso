@@ -2,7 +2,6 @@
 session_start();
 require('data-controller-character.php');
 require('function.php');
-
 ?>
 <!DOCTYPE html>
 <html lang='fr'>
@@ -13,35 +12,34 @@ require('function.php');
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
       <link rel="stylesheet" href="asset/style.css">
    </head>
-
 <body>
-   <div class="container">
-      <?php require('header.php') ?>
-        <br><br>
-        <h1>PERSONNAGE de <?php echo $_SESSION['pseudo'] ?></h1>
-        <input type="hidden" id="result">
-        <br><br>
-   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
-   <div class="carousel-inner">
-    <div class="carousel-item active" data-interval="false">
-    <h2>Caractéristiques Principales</h2>
-      <div class="col">
-         <?php require("get-main-character.php");?>
-      </div>
-    </div>
-    <div class="carousel-item" data-interval="false">
-    <h2>Caractéristiques Physiques</h2>
-         <?php require("get-physical-character.php");?>
-    </div>
-    <div class="carousel-item" data-interval="false">
-    <h2>Caractéristiques Magiques</h2>
-         <?php require("get-magic-character.php");?>
-    </div>
-    <div class="carousel-item" data-interval="false">
 
-    <h2>Pouvoirs Magiques</h2>
-      <?php require("get-magie.php");?>
-      <form method="post">
+   <div class="container">
+   <?php require('header.php') ?>
+        <br><br>
+<h1>PERSONNAGE de <?php echo $_SESSION['pseudo'] ?></h1>
+<input type="hidden" id="result">
+
+  <div class="row">
+    
+<div class="tabs">
+    <ul class="nav nav-tabs">
+    </ul>
+
+  <div class="tab" data-title="Personnage">
+    <?php require("get-main-character.php");?>
+ </div>
+
+ <div class="tab" data-title="Stats Physique">
+    <?php require("get-physical-character.php");?>
+ </div>
+
+ <div class="tab" data-title="Stats Magique">
+     <?php require("get-magic-character.php");?>
+ </div>
+
+ <div class="tab" data-title="Magie">
+ <form method="post">
          <div class="form-group">
             <select class="form-control" id="Select" name="value">
                <option>Ajoutez une magie</option>     
@@ -49,15 +47,14 @@ require('function.php');
                <option value= "<?=$magic->getId()?>" > <?=get_class($magic)?> <?=$magic->getNom()?></option>
             <?php }?>
             </select>
-      <input class='btn btn-primary' type='submit' name='validate' value='valider'>
+      <button class='btn btn-primaryCustom' type='submit' name='validate' value='valider'>Ajouter une Magie</button>
          </div>
-         </form>
-      </div>
+     </form>
+    <?php require("get-magie.php");?>  
+ </div>
 
-<div class="carousel-item" data-interval="false">
-   <h2>Compétences</h2>
-     <?php require("get-competence.php");?>
-      <form method="post">
+ <div class="tab" data-title="Competence">
+ <form method="post">
         <div class="form-group">
            <select class="form-control" name="value">
             <option>Ajoutez une compétence</option>     
@@ -65,15 +62,14 @@ require('function.php');
                 <option value= "<?=$skill->getId()?>"> <?=$skill->getNom()?></option>
               <?php }?>
            </select>
-         <input class='btn btn-primary' type='submit' name='validateSkill' value='valider'>
+         <button class='btn btn-primaryCustom' type='submit' name='validateSkill' value='valider'>Ajouter une Compétence</button>
       </div>
    </form>
-</div>
+    <?php require("get-competence.php");?>
+ </div>
 
-<div class="carousel-item" data-interval="false">
-   <h2>Dons Raciaux</h2>
-    <?php require("get-don.php");?>
-   <form method="post">
+ <div class="tab" data-title="Don">
+ <form method="post">
       <div class="form-group">
          <select class="form-control" name="value">
             <option>Ajoutez un don</option>     
@@ -81,15 +77,14 @@ require('function.php');
             <option value= "<?=$gift->getId()?>"> <?=$gift->getNom()?></option>
          <?php }?>
          </select>
-         <input class='btn btn-primary' type='submit' name='validateGift' value='valider'>
+         <button class='btn btn-primaryCustom' type='submit' name='validateGift' value='valider'>Ajouter un Don</button>
       </div>
    </form>
-    </div>
+    <?php require("get-don.php");?>
+ </div>
 
-<div class="carousel-item" data-interval="false">
-   <h2>Armes</h2>
-      <?php require("get-arme.php");?>
-   <form method="post">
+ <div class="tab" data-title="Arme">
+ <form method="post">
       <div class="form-group">
          <select class="form-control" name="value">
             <option>Ajoutez une arme</option>     
@@ -97,15 +92,14 @@ require('function.php');
             <option value= "<?=$weapon->getId()?>"> <?=$weapon->getNom()?></option>
          <?php }?>
          </select>
-         <input class='btn btn-primary' type='submit' name='validateWeapon' value='valider'>
+         <button class='btn btn-primaryCustom' type='submit' name='validateWeapon' value='valider'>Ajouter une Arme</button>
       </div>
    </form>
-    </div>
+    <?php require("get-arme.php");?>
+ </div>
 
-<div class="carousel-item" data-interval="false">
-   <h2>Armures</h2>
-    <?php require("get-armure.php");?>
-   <form method="post">
+ <div class="tab" data-title="Armure">
+ <form method="post">
       <div class="form-group">
          <select class="form-control" name="value">
             <option>Ajoutez une armure</option>     
@@ -113,20 +107,18 @@ require('function.php');
             <option value= "<?=$armor->getId()?>"> <?=$armor->getNom()?></option>
          <?php }?>
          </select>
-         <input class='btn btn-primary' type='submit' name='validateArmor' value='valider'>
+         <button class='btn btn-primaryCustom' type='submit' name='validateArmor' value='valider'>Ajouter une Armure</button>
       </div>
    </form>
-</div>
+    <?php require("get-armure.php");?>
+ </div>
 
-<div class="carousel-item" data-interval="false">
-   <h2>Informations Bancaires</h2>
+ <div class="tab" data-title="Argent">
     <?php require("get-argent.php");?>
-</div>
+ </div>
 
-<div class="carousel-item" data-interval="false">
-   <h2>Inventaire</h2>
-    <?php require("get-inventaire.php");?>
-   <form method="post">
+ <div class="tab" data-title="Inventaire">
+ <form method="post">
       <div class="form-group">
          <select class="form-control" name="value">
             <option>Ajoutez un objet</option>     
@@ -134,22 +126,18 @@ require('function.php');
             <option value= "<?=$inventory->getId()?>"> <?=$inventory->getNom()?></option>
          <?php }?>
          </select>
-         <input class='btn btn-primary' type='submit' name='validateInventory' value='valider'>
+         <button class='btn btn-primaryCustom' type='submit' name='validateInventory' value='valider'>Ajouter un Objet</button>
       </div>
    </form>
+    <?php require("get-inventaire.php");?>
+ </div>
+
+</div>  
+</div> 
 </div>
 
-</div>
-  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
+      <script src='theme.js'></script>
+      <script src='transform.js'></script>
       <script src='modifyScript.js'></script>
       <script src="sse.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
