@@ -8,5 +8,5 @@
       <p>Amélioration: <span class="border border-primary" <?= dynamicInputAttributes("amelioration1", $armure); ?>><?=htmlentities($armure->getAmelioration1())?></span></p>
       <p>Amélioration: <span class="border border-primary" <?= dynamicInputAttributes("amelioration2", $armure); ?>><?=htmlentities($armure->getAmelioration2())?></span></p>
       <p>Amélioration: <span class="border border-primary" <?= dynamicInputAttributes("amelioration3", $armure); ?>><?=htmlentities($armure->getAmelioration3())?></span></p>
-      <div class="separator"></div>
+      <div class="divider div-transparent div-dot"></div>
 <?php } ?>

@@ -10,18 +10,18 @@ require('function.php');
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>PERSONNAGE</title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-      <link rel="stylesheet" href="asset/style.css">
+      <link rel="stylesheet" href="asset/style.scss">
    </head>
 <body>
 
    <div class="container">
    <?php require('header.php') ?>
         <br><br>
-<h1>PERSONNAGE de <?php echo $_SESSION['pseudo'] ?></h1>
+     
+<h1>PERSONNAGE: <?php echo $_SESSION['pseudo'] ?></h1>
 <input type="hidden" id="result">
-
+   
   <div class="row">
-    
 <div class="tabs">
     <ul class="nav nav-tabs">
     </ul>
@@ -135,8 +135,7 @@ require('function.php');
 </div>  
 </div> 
 </div>
-
-      <script src='theme.js'></script>
+         
       <script src='transform.js'></script>
       <script src='modifyScript.js'></script>
       <script src="sse.js"></script>

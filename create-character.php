@@ -4,6 +4,7 @@ $entityManager = require_once join(DIRECTORY_SEPARATOR, [__DIR__, 'bootstrap.php
 
 use orm\Entity\Character;
 use orm\Entity\User;
+use orm\Entity\Argent;
 
 $bdd = new PDO('mysql:host=localhost;dbname=infoperso;charset=utf8', 'root', '');
 
@@ -54,9 +55,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $entityManager->persist($create);
     $entityManager->flush();
 
+    $createArgent = new Argent();
+    $createArgent->setGold();
+    $createArgent->setPlatine();
+    $createArgent->setMithril();
+    $createArgent->setDragon();
+    $createArgent->setThrone();
+    $createArgent->setPlacement();
+
+    $entityManager->persist($createArgent);
+    $entityManager->flush();
+
     $identity = $_SESSION['id'];
     $character = $create->getId();
     $requete = $bdd->query("INSERT INTO character_user SET character_id=$identity, user_id=$character");
+
+    $argentId = $createArgent->getId();
+    $requete = $bdd->query("UPDATE characters SET argent_id=$argentId WHERE id = $character");
+    $requete = $bdd->query("UPDATE argents SET character_id=$character WHERE id = $argentId");
+   
+
+    
+
+
+$requete = $bdd->query("INSERT INTO argents SET character_id=$character");
+
 
     
     header("Location:connexion-user.php?id=" . $_SESSION['id']);

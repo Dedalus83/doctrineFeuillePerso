@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: black;
+}
+
+.border-primary {
+    border-color: goldenrod!important;
+}
+
+p {
+    margin-left: 3em;
+    margin-right: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    color: #8c8e8e
+}
+
+[data-dynamic-input] {
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+span {
+    font-weight: bold;
+    text-transform: lowercase;
+    font-size: 0.9em;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 2em;
+    color: #8c8e8e
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: #8c8e8e
+}
+
+span .value {
+    margin-left: 1em;
+    margin-top: 0.3em;
+}
+
+.border {
+    border-radius: 7px;
+}
+
+.error {
+    font-weight: bold;
+    text-align: center;
+    color: red;
+}
+
+.form-check-inline {
+    margin-top: 2.7em;
+}
+
+div#navcss {
+    margin-bottom: 1.5em;
+}
+
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+    color: #8c8e8e
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #dee2e6;
+    font-size: 1.2em;
+}
+
+a {
+    color: #8c8e8e;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+.form-control {
+    background-color: Black;
+    color: #8c8e8e;
+}
+
+.form-control:focus {
+  background-color: Black;
+  color: #8c8e8e;
+}
+
+.btn-primaryCustom {
+    color: #fff;
+    background-color: darkgoldenrod;
+    border-color: goldenrod;
+    width: 332px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: darkgoldenrod;
+    border-color: goldenrod;
+}
+
+// ------------ DIVIDER -----------------
+.wrapper {
+    padding-bottom: 90px;
+}
+
+.divider {
+    position: relative;
+    margin-top: 56px;
+    margin-bottom: 26px;
+    height: 1px;
+}
+
+.div-transparent:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, rgb(173 32 208), transparent);
+}
+
+.div-arrow-down:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: -7px;
+    left: calc(50% - 7px);
+    width: 14px;
+    height: 14px;
+    transform: rotate(45deg);
+    background-color: white;
+    border-bottom: 1px solid rgb(173 32 208);
+    border-right: 1px solid rgb(173 32 208);
+}
+
+.div-tab-down:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: calc(50% - 10px);
+    width: 20px;
+    height: 14px;
+    background-color: white;
+    border-bottom: 1px solid rgb(173 32 208);
+    border-left: 1px solid rgb(173 32 208);
+    border-right: 1px solid rgb(173 32 208);
+    border-radius: 0 0 8px 8px;
+}
+
+.div-stopper:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: -6px;
+    left: calc(50% - 7px);
+    width: 14px;
+    height: 12px;
+    background-color: white;
+    border-left: 1px solid rgb(173 32 208);
+    border-right: 1px solid rgb(173 32 208);
+}
+
+.div-dot:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: -9px;
+    left: calc(50% - 9px);
+    width: 18px;
+    height: 18px;
+    background-color: goldenrod;
+    border: 1px solid rgb(173 32 208);
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px black, 0 0 0 4px black;
+}
+
+//--------------- BREAKPOINT MOBILE --------------
+@media only screen and (min-device-width: 360px) and (max-device-height: 1210px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+    /* Styles */
+}
