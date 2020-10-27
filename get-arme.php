@@ -1,5 +1,16 @@
 <?php foreach ($armes as $arme) { ?> 
-      <p>Qualite: <span class="border border-primary" <?= dynamicInputAttributes("qualite", $arme); ?>><?=htmlentities($arme->getQualite())?></span></p>
+
+      <p>Qualite:</p>
+      <div class="rowCustom"> 
+           <form method="post" class="col-1">
+                  <input type="hidden" name="fieldEntity" value="<?= get_class($arme); ?>"/>
+                  <input type="hidden" name="entityId" value="<?= $arme->getId(); ?>"/>`
+                  <button class="btn btn-danger remove" name="remove" value="remove">X</button>
+            </form> 
+            <div class="col-11">
+                  <p><span class="border border-primary custom" <?= dynamicInputAttributes("qualite", $arme); ?>><?=htmlentities($arme->getQualite())?></span></p>
+      </div>
+</div>
       <p>Nom: <span class="border border-primary" <?= dynamicInputAttributes("nom", $arme); ?>><?=htmlentities($arme->getNom())?></span></p>
       <p>Dégâts: <span class="border border-primary" <?= dynamicInputAttributes("degats", $arme, 'number'); ?>><?=htmlentities($arme->getDegats())?></span></p>
       <p>Critique: <span class="border border-primary" <?= dynamicInputAttributes("critique", $arme, 'number'); ?>><?=htmlentities($arme->getCritique())?> %</span></p>

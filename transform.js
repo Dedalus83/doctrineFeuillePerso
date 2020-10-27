@@ -42,16 +42,7 @@
           });
           
           $tab.classList.add("active");
-        }
-
-        // openTabWithName(name){
-        //   tabs.$tab.querySelectorAll('.tab').forEach($tab => {
-        //       if($tab.getAttribute('data-title').toLowerCase() == name.toLowerCase()){
-        //           tabs.openTab($tab);
-        //       }
-        //    })
-        //   }
-         
+        }       
       };
       
       

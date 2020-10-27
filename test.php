@@ -1,11 +1,11 @@
 <?php
 use orm\Entity\Magie;
-use orm\Entity\CharacterMagie;
 
-$em = require_once join(DIRECTORY_SEPARATOR, [__DIR__, 'bootstrap.php']);
+$entityManager = require_once join(DIRECTORY_SEPARATOR, [__DIR__, 'bootstrap.php']);
 
-$tableName = $em->getClassMetadata(CharacterMagie::class)->getTableName();
+$magieRepo = $entityManager->getRepository(Magie::class);
+$magie = $magieRepo->findBy(array(), array('type'=>'asc'));
 
-var_dump($tableName);
+var_dump($magie);
 
 

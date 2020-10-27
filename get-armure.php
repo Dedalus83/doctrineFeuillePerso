@@ -1,5 +1,15 @@
 <?php foreach ($armures as $armure) { ?> 
-      <p>Qualite: <span class="border border-primary" <?= dynamicInputAttributes("qualite", $armure); ?>><?=htmlentities($armure->getQualite())?></span></p>
+      <p>Qualite:</p> 
+      <div class="rowCustom"> 
+            <form method="post" class="col-1">
+                  <input type="hidden" name="fieldEntity" value="<?= get_class($armure); ?>"/>
+                  <input type="hidden" name="entityId" value="<?= $armure->getId(); ?>"/>`
+                  <button class="btn btn-danger remove" name="remove" value="remove">X</button>
+            </form> 
+            <div class="col-11">
+                  <p><span class="border border-primary custom" <?= dynamicInputAttributes("qualite", $armure); ?>><?=htmlentities($armure->getQualite())?></span></p>
+            </div>
+      </div>
       <p>Nom: <span class="border border-primary" <?= dynamicInputAttributes("nom", $armure); ?>><?=htmlentities($armure->getNom())?></span></p>
       <p>Vie: <span class="border border-primary" <?= dynamicInputAttributes("vie", $armure, 'number'); ?>><?=htmlentities($armure->getVie())?></span></p>
       <p>Resilience: <span class="border border-primary" <?= dynamicInputAttributes("resilience", $armure, 'number'); ?>><?=htmlentities($armure->getResilience())?>%</span> </p>

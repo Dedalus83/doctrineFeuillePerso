@@ -1,7 +1,17 @@
 <?php 
 
 foreach ($magies as $magie) { ?> 
-      <p>Type: <span class="border border-primary" <?= dynamicInputAttributes("type", $magie); ?>><?=htmlentities($magie->getType())?></span></p>
+      <p>Type:</p>
+      <div class="rowCustom">
+            <form method="post" class="col-1">
+                  <input type="hidden" name="fieldEntity" value="<?= get_class($magie); ?>"/>
+                  <input type="hidden" name="entityId" value="<?= $magie->getId(); ?>"/>` 
+                  <button class="btn btn-danger remove" name="remove" value="remove">X</button>
+            </form> 
+            <div class="col-11">
+                  <p><span class="border border-primary custom" <?= dynamicInputAttributes("type", $magie); ?>><?=htmlentities($magie->getType())?></span></p>
+            </div>
+      </div>
       <p>Nom: <span class="border border-primary" <?= dynamicInputAttributes("nom", $magie); ?>><?=htmlentities($magie->getNom())?></span></p>
       <p>Description: <span class="border border-primary" <?= dynamicInputAttributes("description", $magie); ?>><?=htmlentities($magie->getDescription())?></span></p>
       <p>Dégâts: <span class="border border-primary" <?= dynamicInputAttributes("degats", $magie, 'number'); ?>><?=htmlentities($magie->getDegats())?></span></p>

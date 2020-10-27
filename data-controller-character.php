@@ -41,22 +41,22 @@ $magies = clone $character->getCharacterMagie();
 $argents = $character->getArgent();
 
 $magieRepo = $entityManager->getRepository(Magie::class);
-$magics = $magieRepo->findAll();
+$magics = $magieRepo->findBy(array(), array('type'=>'asc'));
 
 $competenceRepo = $entityManager->getRepository(Competence::class);
-$skills = $competenceRepo->findAll();
+$skills = $competenceRepo->findBy(array(), array('nom'=>'asc'));
 
 $donRepo = $entityManager->getRepository(Don::class);
-$gifts = $donRepo->findAll();
+$gifts = $donRepo->findBy(array(), array('nom'=>'asc'));
 
 $armeRepo = $entityManager->getRepository(Arme::class);
-$weapons = $armeRepo->findAll();
+$weapons = $armeRepo->findBy(array(), array('nom'=>'asc'));
 
 $armureRepo = $entityManager->getRepository(Armure::class);
-$armors = $armureRepo->findAll();
+$armors = $armureRepo->findBy(array(), array('nom'=>'asc'));
 
 $inventaireRepo = $entityManager->getRepository(Inventaire::class);
-$inventories = $inventaireRepo->findAll();
+$inventories = $inventaireRepo->findBy(array(), array('nom'=>'asc'));
 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -173,7 +173,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $entityManager->flush();
         header("Location: characterPage.php?tab=".CharacterInventaire::getTabTitle());
           die();
-       }
+        } 
+        elseif (isset($_POST['remove'])) 
+        {
+          $entityClassName = $_POST["fieldEntity"];
+          $entityId = $_POST['entityId'];
+        
+          $repoDynamic = $entityManager->getRepository($entityClassName);
+          $entityDynamic = $repoDynamic->find($entityId);
+          $entityManager->remove($entityDynamic);
+          $entityManager->flush();
+              }
 
        else
        {
@@ -194,9 +204,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $entityManager->flush();
        }
      } 
-        header("Location: characterPage.php?tab=".$entityClassName::getTabTitle());//substr($entityClassName, 20));
+        header("Location: characterPage.php?tab=".$entityClassName::getTabTitle());
         die(); 
           
   }
-?>
+
+//   if ($_SERVER["REQUEST_METHOD"] === "POST") {
+//       if (isset($_POST['remove'])) {
+
+//         $className = $_POST['fieldEntity'];
+//         $id = $_POST['entityId'];
+
+//         $repoDynamic = $entityManager->getRepository($entityClassName);
+//         $entityDynamic = $repoDynamic->find($entityId);
+//         $repo->remove();
+//         $repo->flush();
+//       };
+//   };
+    
+// ?>
 

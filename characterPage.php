@@ -46,7 +46,7 @@ Use orm\service\CharacterSheetService;
             <select class="form-control" id="Select" name="value">
                <option>Ajoutez une magie</option>     
             <?php foreach ($magics as $magic) {?>
-               <option value= "<?=$magic->getId()?>" > <?=get_class($magic)?> <?=$magic->getNom()?></option>
+               <option value= "<?=$magic->getId()?>" ><?=$magic->getType()?>: <?=$magic->getNom()?></option>
             <?php }?>
             </select>
       <button class='btn btn-primaryCustom' type='submit' name='validate' value='valider'>Ajouter une Magie</button>
