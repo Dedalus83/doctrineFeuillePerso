@@ -3,6 +3,8 @@
 namespace orm\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use orm\Interfaces\IEntityWithTabTitle;
+use orm\Traits\EntityWithTabTitleTrait;
 
 /**
  * CharacterDon
@@ -10,8 +12,11 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="characterDon")
  * @ORM\Entity
  */
-class CharacterDon extends Don
+class CharacterDon extends Don implements IEntityWithTabTitle
 {
+
+    const TAB_TITLE = "Don";
+    use EntityWithTabTitleTrait;
     /**
      * @var string
      *

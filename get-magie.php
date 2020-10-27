@@ -1,4 +1,5 @@
 <?php 
+
 foreach ($magies as $magie) { ?> 
       <p>Type: <span class="border border-primary" <?= dynamicInputAttributes("type", $magie); ?>><?=htmlentities($magie->getType())?></span></p>
       <p>Nom: <span class="border border-primary" <?= dynamicInputAttributes("nom", $magie); ?>><?=htmlentities($magie->getNom())?></span></p>

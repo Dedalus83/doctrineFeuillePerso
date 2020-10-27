@@ -2,6 +2,8 @@
 session_start();
 require('data-controller-character.php');
 require('function.php');
+
+Use orm\service\CharacterSheetService;
 ?>
 <!DOCTYPE html>
 <html lang='fr'>
@@ -35,10 +37,10 @@ require('function.php');
  </div>
 
  <div class="tab" data-title="Stats Magique">
-     <?php require("get-magic-character.php");?>
+     <?php require("get-magic-character.php");?> 
  </div>
 
- <div class="tab" data-title="Magie">
+ <div class="tab" data-title="<?= CharacterSheetService::TAB_MAGIE ?>">
  <form method="post">
          <div class="form-group">
             <select class="form-control" id="Select" name="value">
@@ -53,7 +55,7 @@ require('function.php');
     <?php require("get-magie.php");?>  
  </div>
 
- <div class="tab" data-title="Competence">
+ <div class="tab" data-title="<?= CharacterSheetService::TAB_COMPETENCE ?>">
  <form method="post">
         <div class="form-group">
            <select class="form-control" name="value">
@@ -68,7 +70,7 @@ require('function.php');
     <?php require("get-competence.php");?>
  </div>
 
- <div class="tab" data-title="Don">
+ <div class="tab" data-title="<?= CharacterSheetService::TAB_DON ?>">
  <form method="post">
       <div class="form-group">
          <select class="form-control" name="value">
@@ -83,7 +85,7 @@ require('function.php');
     <?php require("get-don.php");?>
  </div>
 
- <div class="tab" data-title="Arme">
+ <div class="tab" data-title="<?= CharacterSheetService::TAB_ARME ?>">
  <form method="post">
       <div class="form-group">
          <select class="form-control" name="value">
@@ -98,7 +100,7 @@ require('function.php');
     <?php require("get-arme.php");?>
  </div>
 
- <div class="tab" data-title="Armure">
+ <div class="tab" data-title="<?= CharacterSheetService::TAB_ARMURE ?>">
  <form method="post">
       <div class="form-group">
          <select class="form-control" name="value">
@@ -113,11 +115,11 @@ require('function.php');
     <?php require("get-armure.php");?>
  </div>
 
- <div class="tab" data-title="Argent">
+ <div class="tab" data-title="<?= CharacterSheetService::TAB_ARGENT ?>">
     <?php require("get-argent.php");?>
  </div>
 
- <div class="tab" data-title="Inventaire">
+ <div class="tab" data-title="<?= CharacterSheetService::TAB_INVENTAIRE ?>">
  <form method="post">
       <div class="form-group">
          <select class="form-control" name="value">

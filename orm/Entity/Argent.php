@@ -5,14 +5,19 @@ namespace orm\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OneToOne;
 
+use orm\Interfaces\IEntityWithTabTitle;
+use orm\Traits\EntityWithTabTitleTrait;
+
 /**
  * Argent
  *
  * @ORM\Table(name="argents")
  * @ORM\Entity
  */
-class Argent
+class Argent implements IEntityWithTabTitle
 {
+    const TAB_TITLE = "Argent";
+    use EntityWithTabTitleTrait;
     /**
      * @var int
      *

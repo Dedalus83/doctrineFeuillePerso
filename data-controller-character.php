@@ -15,6 +15,7 @@ use orm\Entity\CharacterArme;
 use orm\Entity\CharacterArmure;
 use orm\Entity\CharacterInventaire;
 use orm\Entity\User;
+use orm\Service\CharacterSheetService;
 
 $entityManager = require_once join(DIRECTORY_SEPARATOR, [__DIR__, 'bootstrap.php']);
 
@@ -75,6 +76,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           $characterMagie->setMagie($magie);
           $entityManager->persist($characterMagie);
           $entityManager->flush();
+          header("Location: characterPage.php?tab=".CharacterMagie::getTabTitle());
+          die();
        }
        elseif (isset($_POST['validateSkill']))
         {
@@ -92,6 +95,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           $characterCompetence->setCompetence($competence);
           $entityManager->persist($characterCompetence);
           $entityManager->flush();
+          header("Location: characterPage.php?tab=".CharacterCompetence::getTabTitle());
+          die();
         }
        elseif(isset($_POST['validateArmor']))
        {
@@ -109,6 +114,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $characterArmure->setArmure($armure);
         $entityManager->persist($characterArmure);
         $entityManager->flush();
+        header("Location: characterPage.php?tab=".CharacterArmure::getTabTitle());
+          die();
        }
        elseif(isset($_POST['validateWeapon']))
        {
@@ -126,6 +133,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $characterArme->setArme($arme);
         $entityManager->persist($characterArme);
         $entityManager->flush();
+        header("Location: characterPage.php?tab=".CharacterArme::getTabTitle());
+          die();
        }
        elseif(isset($_POST['validateGift']))
        {
@@ -143,6 +152,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $characterDon->setDon($don);
         $entityManager->persist($characterDon);
         $entityManager->flush();
+        header("Location: characterPage.php?tab=".CharacterDon::getTabTitle());
+          die();
        }
        elseif(isset($_POST['validateInventory']))
        {
@@ -160,6 +171,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $characterInventaire->setInventaire($inventaire);
         $entityManager->persist($characterInventaire);
         $entityManager->flush();
+        header("Location: characterPage.php?tab=".CharacterInventaire::getTabTitle());
+          die();
        }
 
        else
@@ -180,7 +193,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $entityManager->persist($entityDynamic);
         $entityManager->flush();
        }
-     } Header('Location: '.$_SERVER['PHP_SELF']);  
+     } 
+        header("Location: characterPage.php?tab=".$entityClassName::getTabTitle());//substr($entityClassName, 20));
+        die(); 
+          
   }
 ?>
 

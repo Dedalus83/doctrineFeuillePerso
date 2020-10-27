@@ -4,7 +4,8 @@ namespace orm\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OneToOne;
-
+use orm\Interfaces\IEntityWithTabTitle;
+use orm\Traits\EntityWithTabTitleTrait;
 
 /**
  * Character
@@ -12,8 +13,10 @@ use Doctrine\ORM\Mapping\OneToOne;
  * @ORM\Table(name="characters")
  * @ORM\Entity
  */
-class Character
+class Character implements IEntityWithTabTitle
 {
+    const TAB_TITLE = "Character";
+    use EntityWithTabTitleTrait;
     /**
      * @var int
      *

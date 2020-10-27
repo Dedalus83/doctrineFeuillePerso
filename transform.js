@@ -37,15 +37,37 @@
         }
         
         openTab($tab){
-          // Hide all tabs
           this.$tab.querySelectorAll(".tab").forEach($tab => {
             $tab.classList.remove("active");
           });
           
-          // Show only $tab
           $tab.classList.add("active");
         }
-        
-      }
+
+        // openTabWithName(name){
+        //   tabs.$tab.querySelectorAll('.tab').forEach($tab => {
+        //       if($tab.getAttribute('data-title').toLowerCase() == name.toLowerCase()){
+        //           tabs.openTab($tab);
+        //       }
+        //    })
+        //   }
+         
+      };
+      
       
       const tabs = new Tabs(".tabs");
+      function openTabWithName(name){
+        tabs.$tab.querySelectorAll('.tab').forEach($tab => {
+            if($tab.getAttribute('data-title').toLowerCase() == name.toLowerCase()){
+                tabs.openTab($tab);
+            }
+         })
+        }
+        
+      var params = new URLSearchParams(location.search)
+       const allButton = document.querySelectorAll("button");
+        allButton.forEach($button => {
+        $button.addEventListener('click', openTabWithName(params.get("tab")));
+    })
+     
+    
