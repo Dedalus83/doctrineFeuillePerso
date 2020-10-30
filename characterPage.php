@@ -134,6 +134,10 @@ Use orm\service\CharacterSheetService;
     <?php require("get-inventaire.php");?>
  </div>
 
+ <div class="tab" data-title="<?= CharacterSheetService::TAB_CONTACT ?>">
+    <?php require("get-contact.php");?>
+ </div>
+
 </div>  
 </div> 
 </div>

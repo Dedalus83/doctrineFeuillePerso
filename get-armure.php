@@ -1,9 +1,9 @@
 <?php foreach ($armures as $armure) { ?> 
-      <p>Qualite:</p> 
+      <p id='<?= $armure->getId() ?>'>Qualite:</p> 
       <div class="rowCustom"> 
             <form method="post" class="col-1">
                   <input type="hidden" name="fieldEntity" value="<?= get_class($armure); ?>"/>
-                  <input type="hidden" name="entityId" value="<?= $armure->getId(); ?>"/>`
+                  <input type="hidden" name="entityId" value="<?= $armure->getId(); ?>"/>
                   <button class="btn btn-danger remove" name="remove" value="remove">X</button>
             </form> 
             <div class="col-11">
@@ -20,3 +20,12 @@
       <p>Amélioration: <span class="border border-primary" <?= dynamicInputAttributes("amelioration3", $armure); ?>><?=htmlentities($armure->getAmelioration3())?></span></p>
       <div class="divider div-transparent div-dot"></div>
 <?php } ?>
+
+<div class="btn-group fixed-topCustom dropup navbar-toggler navbar-toggler-icon">
+  <input class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="Armure index">
+  <div class="dropdown-menu">
+      <?php foreach ($armures as $armure) { ?> 
+            <a class="list-group-item fixed-left" href="#<?= $armure->getId()?>" ><?= $armure->getNom() ?></a>
+      <?php } ?>
+  </div>
+</div>

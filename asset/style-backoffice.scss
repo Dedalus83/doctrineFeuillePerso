@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+}
+
+.error {
+    font-weight: bold;
+    text-align: center;
+    color: red;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    margin-left: 0.9em;
+}
+
+form {
+    width: auto;
+}
+
+.jumbotron-fluid {
+    padding-right: 0;
+    padding-left: 0;
+    border-radius: 0;
+    background-color: #007bff;
+    color: white;  
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 19.3em;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    display: inline-table;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: grey;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    display: none;
+  }
+
+  .open-cursor {
+    font-size: 30px;
+    cursor: pointer;
+    margin-left: 0.5em;
+}
+
+  .admin-space{
+    display: none;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {
+        top: 6em;
+        padding-top: 15px;
+        display: initial;
+      }
+    .sidenav a {font-size: 18px;}
+
+    .sidenav .closebtn {
+        display: initial;
+      }
+  }
+
+  @media screen and (min-height: 500px) and (max-device-width: 995px) {
+    .sidenav {
+        top: 25.3em;
+        padding-top: 15px;
+        display: initial;
+      }
+    .sidenav a {font-size: 18px;}
+
+    .sidenav .closebtn {
+        display: initial;
+      }
+  }
+
+  @media screen and (max-device-width: 996px){
+    
+    .admin-space{
+        display: block;
+        padding: 0.6em;
+        color:white;
+        background-color: #007bff;
+    }
+    .jumbotron-fluid {
+        display: none;
+        
+    }
+    .jumbotron{
+        display: none;
+        
+    }
+
+    .sidenav {
+        top: 6em;
+        padding-top: 15px;
+        display: initial;
+      }
+    .sidenav a {font-size: 18px;}
+  }

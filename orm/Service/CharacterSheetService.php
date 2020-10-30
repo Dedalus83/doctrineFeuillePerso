@@ -10,4 +10,5 @@ class CharacterSheetService {
     const TAB_ARMURE = "Armure";
     const TAB_INVENTAIRE = "Inventaire";
     const TAB_ARGENT = "Argent";
+    const TAB_CONTACT = "Contact";
 }

@@ -1,11 +1,11 @@
 <?php 
-
 foreach ($magies as $magie) { ?> 
-      <p>Type:</p>
+    
+      <p id='<?= $magie->getId() ?>'>Type:</p>
       <div class="rowCustom">
             <form method="post" class="col-1">
                   <input type="hidden" name="fieldEntity" value="<?= get_class($magie); ?>"/>
-                  <input type="hidden" name="entityId" value="<?= $magie->getId(); ?>"/>` 
+                  <input type="hidden" name="entityId" value="<?= $magie->getId(); ?>"/> 
                   <button class="btn btn-danger remove" name="remove" value="remove">X</button>
             </form> 
             <div class="col-11">
@@ -22,3 +22,12 @@ foreach ($magies as $magie) { ?>
       <p>Effet: <span class="border border-primary" <?= dynamicInputAttributes("effet", $magie); ?>><?=htmlentities($magie->getEffet())?></span></p>
       <div class="divider div-transparent div-dot"></div>
 <?php } ?>
+
+<div class="btn-group fixed-topCustom dropup navbar-toggler navbar-toggler-icon">
+  <input class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="Magie index">
+  <div class="dropdown-menu">
+      <?php foreach ($magies as $magie) { ?> 
+            <a class="list-group-item fixed-left" href="#<?= $magie->getId()?>" ><?= $magie->getNom() ?></a>
+      <?php } ?>
+  </div>
+</div>

@@ -1,6 +1,8 @@
 <?php
 
+
 use orm\Entity\Argent;
+use orm\Entity\Contact;
 use orm\Entity\Arme;
 use orm\Entity\Armure;
 use orm\Entity\Character;
@@ -39,6 +41,8 @@ $inventaires = clone $character->getCharacterInventaire();
 $magies = clone $character->getCharacterMagie();
 
 $argents = $character->getArgent();
+
+$contacts = $character->getContact();
 
 $magieRepo = $entityManager->getRepository(Magie::class);
 $magics = $magieRepo->findBy(array(), array('type'=>'asc'));
@@ -184,6 +188,29 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           $entityManager->remove($entityDynamic);
           $entityManager->flush();
               }
+        elseif(isset($_POST['contact']))
+        {
+          
+          $contactRepo = $entityManager->getRepository(Contact::class);
+          $contact = $contactRepo->findAll();
+           
+          $create = new Contact();
+
+          $characterId = $character->getId();
+          $create->setNumberTel($_POST['numberTel']);
+          $create->setNameContact($_POST['nameContact']);
+          $create->setChance($_POST['chance']);
+          
+      
+          $entityManager->persist($create);
+          $entityManager->flush();
+
+          $contactId = $create->getId();
+          $bdd = new PDO('mysql:host=localhost;dbname=infoperso;charset=utf8', 'root', '');
+          $requete = $bdd->query("UPDATE contacts SET character_id=$characterId WHERE id = $contactId");
+          header("Location: characterPage.php?tab=".Contact::getTabTitle());
+            die();
+        }
 
        else
        {

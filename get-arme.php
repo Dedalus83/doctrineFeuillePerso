@@ -1,10 +1,10 @@
 <?php foreach ($armes as $arme) { ?> 
 
-      <p>Qualite:</p>
+      <p id='<?= $arme->getId() ?>'>Qualite:</p>
       <div class="rowCustom"> 
            <form method="post" class="col-1">
                   <input type="hidden" name="fieldEntity" value="<?= get_class($arme); ?>"/>
-                  <input type="hidden" name="entityId" value="<?= $arme->getId(); ?>"/>`
+                  <input type="hidden" name="entityId" value="<?= $arme->getId(); ?>"/>
                   <button class="btn btn-danger remove" name="remove" value="remove">X</button>
             </form> 
             <div class="col-11">
@@ -21,3 +21,12 @@
       <p>Amélioration: <span class="border border-primary" <?= dynamicInputAttributes("amelioration", $arme); ?>><?=htmlentities($arme->getAmelioration())?></span></p>
       <div class="divider div-transparent div-dot"></div>
 <?php } ?>  
+
+<div class="btn-group fixed-topCustom dropup navbar-toggler navbar-toggler-icon">
+  <input class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="Arme index">
+  <div class="dropdown-menu">
+      <?php foreach ($armes as $arme) { ?> 
+            <a class="list-group-item fixed-left" href="#<?= $arme->getId()?>" ><?= $arme->getNom() ?></a>
+      <?php } ?>
+  </div>
+</div>

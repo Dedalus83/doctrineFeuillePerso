@@ -4,11 +4,12 @@ namespace orm\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OneToOne;
+use Doctrine\ORM\Mapping\OneToMany;
 use orm\Interfaces\IEntityWithTabTitle;
 use orm\Traits\EntityWithTabTitleTrait;
 
 /**
- * Character
+ * Characterm)dy_tçyrèààààe))))e"ui_èèy_ctydu-_èà
  *
  * @ORM\Table(name="characters")
  * @ORM\Entity
@@ -311,6 +312,12 @@ class Character implements IEntityWithTabTitle
      *
      * @ORM\OneToMany(targetEntity="orm\Entity\CharacterMagie", mappedBy="character")
      */
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="orm\Entity\CharacterMagie", mappedBy="character")
+     */
     private $characterMagie;
 
     /**
@@ -350,6 +357,9 @@ class Character implements IEntityWithTabTitle
 
     /** @OneToOne(targetEntity="Argent") */
     private $argent;
+
+    /** @ORM\OneToMany(targetEntity="orm\Entity\Contact", mappedBy="character") */
+    private $contact;
 
 
     /**
@@ -1551,32 +1561,6 @@ class Character implements IEntityWithTabTitle
         return $this->characterArmure;
     }
 
-    // /**
-    //  * Add argent.
-    //  *
-    //  * @param \orm\Entity\Argent $argent
-    //  *
-    //  * @return Argent
-    //  */
-    // public function addArgent(\orm\Entity\Argent $argent)
-    // {
-    //     $this->argent[] = $argent;
-
-    //     return $this;
-    // }
-
-    // /**
-    //  * Remove argent.
-    //  *
-    //  * @param \orm\Entity\Argent $argent
-    //  *
-    //  * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
-    //  */
-    // public function removeArgent(\orm\Entity\Argent $argent)
-    // {
-    //     return $this->argent->removeElement($argent);
-    // }
-
     /**
      * Get argent.
      *
@@ -1585,6 +1569,16 @@ class Character implements IEntityWithTabTitle
     public function getArgent()
     {
         return $this->argent;
+    }
+
+    /**
+     * Get contact.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getContact()
+    {
+        return $this->contact;
     }
 
 }

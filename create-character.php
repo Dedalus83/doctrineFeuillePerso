@@ -74,11 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $requete = $bdd->query("UPDATE characters SET argent_id=$argentId WHERE id = $character");
     $requete = $bdd->query("UPDATE argents SET character_id=$character WHERE id = $argentId");
    
-
-    
-
-
-$requete = $bdd->query("INSERT INTO argents SET character_id=$character");
+    $requete = $bdd->query("INSERT INTO argents SET character_id=$character");
 
 
     

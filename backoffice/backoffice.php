@@ -1,11 +1,13 @@
 <?php
+
+require('template.php'); 
+require('nav-categories.php');
+
 use orm\Entity\User;
 
-require 'template.php';
-require 'function.php';
+require '../function.php';
 
-
-$entityManager = require_once join(DIRECTORY_SEPARATOR, [__DIR__, 'bootstrap.php']);
+$entityManager = require_once join(DIRECTORY_SEPARATOR, [__DIR__, '../bootstrap.php']);
 
 $userRepo = $entityManager->getRepository(User::class);
 $users = $userRepo->findAll();
@@ -13,7 +15,6 @@ $users = $userRepo->findAll();
 foreach ($users as $user) {
   $modifyActivated = $user->getChecked();
 };
-
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["switch"]) && isset($_POST["userId"])) {
       
@@ -27,15 +28,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["switch"]) && isset($_P
           $entityManager->flush();
           Header('Location: '.$_SERVER['PHP_SELF']);
 }
-
 ?>
-<br><br><br><br>
-<div class='container'>
-
-<?php foreach ($users as $user) {?>
+<div class="offset-md-2 col-md-8 offset-md-2">
+<h1>Interface de modification des personnages</h1>
+<?php foreach ($users as $user) {?> 
   <form action="" method="post">
+    
     <div class="form-group">
-      <p> <?=$user->getPseudo();?></p>
+      <h3>Nom de l'utilisateur:   <?=$user->getPseudo();?></h3>
 <?php $modifyActivated = $user->getChecked(); ?>
   <input type="hidden" name="userId" value="<?= $user->getId() ?>"/>
 <div class="form-check form-check-inline">
@@ -49,7 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["switch"]) && isset($_P
 <input class='btn btn-primary' type='submit' name='valider' value='valider'>
 <input type=hidden id=varPass value=<?php echo $modifyActivated; ?>/>
 </form>
+<br><br>
 <?php }?>
-    
-
-
+</div>

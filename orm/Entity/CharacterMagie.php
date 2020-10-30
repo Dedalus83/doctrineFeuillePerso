@@ -27,6 +27,7 @@ class CharacterMagie extends Magie implements IEntityWithTabTitle
      */
     private $id;
 
+
     /**
      * Get magie.
      *

@@ -1,4 +1,5 @@
 <?php
+
 namespace orm\Service\SingletonEntityManager;
 
 class SingletonEntityManager {
@@ -15,6 +16,4 @@ class SingletonEntityManager {
     }
 }
 
-$SingleEntityManager = SingletonEntityManager::Get();
-
-
+$singleEntityManager = SingletonEntityManager::Get();

@@ -6,6 +6,7 @@ use orm\Interfaces\IEntityWithTabTitle;
 use orm\Traits\EntityWithTabTitleTrait;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * Magie
  * @ORM\Table(name="magies")
