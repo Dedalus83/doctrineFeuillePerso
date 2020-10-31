@@ -79,6 +79,8 @@ form {
   .admin-space{
     display: none;
   }
+
+  
   
   @media screen and (max-height: 450px) {
     .sidenav {
@@ -92,6 +94,8 @@ form {
         display: initial;
       }
   }
+
+ 
 
   @media screen and (min-height: 500px) and (max-device-width: 995px) {
     .sidenav {

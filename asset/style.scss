@@ -112,11 +112,13 @@ a:hover{
 .form-control {
     background-color: Black;
     color: #8c8e8e;
+    border: 6px double goldenrod;
 }
 
 .form-control:focus {
   background-color: Black;
   color: #8c8e8e;
+  border-color: goldenrod;
 }
 
 .btn-primaryCustom {
@@ -290,6 +292,11 @@ input.btn.btn-secondary.btn-lg.dropdown-toggle {
 
 nav#navbar-example3 {
     width: 7em;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: black;
+    opacity: 1;
 }
 
 

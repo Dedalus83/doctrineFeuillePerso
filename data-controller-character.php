@@ -2,6 +2,7 @@
 
 
 use orm\Entity\Argent;
+use orm\Entity\Notebook;
 use orm\Entity\Contact;
 use orm\Entity\Arme;
 use orm\Entity\Armure;
@@ -43,6 +44,8 @@ $magies = clone $character->getCharacterMagie();
 $argents = $character->getArgent();
 
 $contacts = $character->getContact();
+
+$notes = $character->getNote();
 
 $magieRepo = $entityManager->getRepository(Magie::class);
 $magics = $magieRepo->findBy(array(), array('type'=>'asc'));
@@ -211,6 +214,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           header("Location: characterPage.php?tab=".Contact::getTabTitle());
             die();
         }
+        elseif(isset($_POST['note']))
+        {
+          $noteRepo = $entityManager->getRepository(Notebook::class);
+          $note = $noteRepo->findAll();
+           
+          $create = new Notebook();
+
+          $characterId = $character->getId();
+          $create->setNote($_POST['newsNote']);
+          
+          $entityManager->persist($create);
+          $entityManager->flush();
+
+          $noteId = $create->getId();
+          $bdd = new PDO('mysql:host=localhost;dbname=infoperso;charset=utf8', 'root', '');
+          $requete = $bdd->query("UPDATE notebook SET character_id=$characterId WHERE id = $noteId");
+          header("Location: characterPage.php?tab=".Notebook::getTabTitle());
+            die();
+        }
 
        else
        {
@@ -232,22 +254,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
        }
      } 
         header("Location: characterPage.php?tab=".$entityClassName::getTabTitle());
-        die(); 
-          
+        die();       
   }
-
-//   if ($_SERVER["REQUEST_METHOD"] === "POST") {
-//       if (isset($_POST['remove'])) {
-
-//         $className = $_POST['fieldEntity'];
-//         $id = $_POST['entityId'];
-
-//         $repoDynamic = $entityManager->getRepository($entityClassName);
-//         $entityDynamic = $repoDynamic->find($entityId);
-//         $repo->remove();
-//         $repo->flush();
-//       };
-//   };
-    
-// ?>
+ ?>
 

@@ -59,7 +59,7 @@ class User
     /**
      * @var bool
      *
-     * @ORM\Column(name="checked", type="boolean", precision=0, scale=0, nullable=false, unique=false)
+     * @ORM\Column(name="checked", type="boolean", precision=0, scale=0, nullable=true, unique=false)
      */
     private $checked;
 

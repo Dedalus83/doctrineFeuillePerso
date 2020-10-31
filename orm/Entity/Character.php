@@ -9,7 +9,7 @@ use orm\Interfaces\IEntityWithTabTitle;
 use orm\Traits\EntityWithTabTitleTrait;
 
 /**
- * Characterm)dy_tçyrèààààe))))e"ui_èèy_ctydu-_èà
+ * Character
  *
  * @ORM\Table(name="characters")
  * @ORM\Entity
@@ -357,6 +357,9 @@ class Character implements IEntityWithTabTitle
 
     /** @OneToOne(targetEntity="Argent") */
     private $argent;
+
+    /** @ORM\OneToMany(targetEntity="orm\Entity\Notebook", mappedBy="character") */
+    private $note;
 
     /** @ORM\OneToMany(targetEntity="orm\Entity\Contact", mappedBy="character") */
     private $contact;
@@ -1569,6 +1572,16 @@ class Character implements IEntityWithTabTitle
     public function getArgent()
     {
         return $this->argent;
+    }
+
+    /**
+     * Get note.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getNote()
+    {
+        return $this->note;
     }
 
     /**
