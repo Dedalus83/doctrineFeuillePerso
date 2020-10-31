@@ -1,14 +1,10 @@
-<?php
-use orm\Entity\Contact;
-?>
-
 <div class="btn-group fixed-topCustom dropup navbar-toggler navbar-toggler-icon">
   <input class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="Ajouter un contact">
   <div class="dropdown-menu">
 
 <form action="" method="post">
     <div class='col'>
-<h1 class='text-center'>Ajouter un contact</h1>
+<h3 class='text-center'>Ajouter un contact</h3>
 
 <div class="col">
     <label for="nameContact">Nom: </label>
@@ -29,4 +25,3 @@ use orm\Entity\Contact;
 
 </div>
   </div>
-</div>

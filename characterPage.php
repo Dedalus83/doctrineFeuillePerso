@@ -119,7 +119,6 @@ Use orm\service\CharacterSheetService;
     <?php require("get-argent.php");?>
  </div>
 
- 
  <div class="tab" data-title="<?= CharacterSheetService::TAB_INVENTAIRE ?>">
  <form method="post">
       <div class="form-group">
@@ -135,15 +134,13 @@ Use orm\service\CharacterSheetService;
     <?php require("get-inventaire.php");?>
  </div>
 
- <div class="tab" data-title="<?= CharacterSheetService::TAB_NOTEBOOK ?>">
-    <?php require("get-notebook.php");?>
- </div>
-
  <div class="tab" data-title="<?= CharacterSheetService::TAB_CONTACT ?>">
     <?php require("get-contact.php");?>
  </div>
-
  
+ <div class="tab" data-title="<?= CharacterSheetService::TAB_NOTEBOOK ?>">
+    <?php require("get-notebook.php");?>
+ </div>
 
 </div>  
 </div> 
