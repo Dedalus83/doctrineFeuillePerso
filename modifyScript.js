@@ -46,8 +46,4 @@ function toggle($data){
     allButton.forEach($button => {
         $button.disabled = !$data
     })  
-
 };
-
-   
-

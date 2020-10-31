@@ -1,22 +1,87 @@
+:root {
+    --global-bg-color: black;
+    --global-font-family: Roboto, "Helvetica Neue";
+    --global-text-color: #8c8e8e;
+    --global-link-color: #8c8e8e;
+    --global-link-hover: goldenrod;
+    --global-a-hover: rgb(173 32 208);
+    --global-theme-toggle-bg: goldenrod;
+    --global-border-color: goldenrod;
+    --global-button-color: goldenrod;
+    --global-list-item-color: white;
+    --global-navtabs-hover: rgb(173 32 208);
+    --global-divider-color: rgb(173 32 208);
+    --global-bg-image:url("");
+    --global-theme-toggle-content: 'ROYAL';
+}
+
+body[data-theme='minimal'] {
+    --global-bg-color: white;
+    --global-font-family: Roboto, "Helvetica Neue";
+    --global-text-color: #black;
+    --global-link-color: #blue;
+    --global-link-hover: grey;
+    --global-theme-toggle-bg: white;
+    --global-theme-toggle-content: 'MINIMAL';
+  }
+
+body[data-theme='furia'] {
+    --global-bg-color: black;
+    --global-text-color: white;
+    --global-link-color: white;
+    --global-a-hover: red;
+    --global-link-hover: rgb(255, 0, 0);
+    --global-border-color:  rgb(214 118 17);
+    --global-button-color: rgb(214 118 17);
+    --global-list-item-color: white;
+    --global-navtabs-hover: rgb(214 118 17);
+    --global-bg-image:url('furia.png');
+    --global-divider-color: red;
+    --global-theme-toggle-bg: rgb(214 118 17);
+    --global-theme-toggle-content: 'FURIA';
+    
+  }
+
+  .theme-toggle {
+    position: fixed;
+    right: 63px;
+    top: 8px;
+    background: var(--global-theme-toggle-bg);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.theme-toggle::after {
+    content: var(--global-theme-toggle-content);
+}
+
 body {
     margin: 0;
-    font-family: Roboto, "Helvetica Neue";
+    font-family: var(--global-font-family);
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: black;
+    background: var(--global-bg-color);
+    transition: all 1s;
+    background-image: var(--global-bg-image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .border-primary {
-    border-color: goldenrod!important;
+    border-color:  var(--global-border-color)!important;
 }
 
 .btn-primary.disabled, .btn-primary:disabled {
-    color: #fff;
-    background-color:  goldenrod;
-    border-color:  goldenrod;
+    color: var(--global-list-item-color);
+    background-color: var(--global-button-color);
+    border-color: var(--global-border-color);
 }
 
 p {
@@ -25,7 +90,7 @@ p {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 1.3em;
-    color: #8c8e8e
+    color: var(--global-text-color);
 }
 
 [data-dynamic-input] {
@@ -48,19 +113,23 @@ span {
 h2 {
     font-weight: bold;
     font-size: 2em;
-    color: #8c8e8e
+    color: var(--global-text-color);
 }
 
 h1 {
     font-weight: bold;
     font-size: 1.5em;
     margin-top: 10px;
-    color: #8c8e8e
+    color: var(--global-text-color);
 }
 
 span .value {
     margin-left: 1em;
     margin-top: 0.3em;
+}
+
+.bg-dark {
+    background-color: #191919!important;
 }
 
 .border {
@@ -87,24 +156,25 @@ div#navcss {
 
 .tab.active {
     display: block;
-    color: #8c8e8e
+    color: var(--global-text-color);
 }
 
 .nav-tabs {
-    border-bottom: 1px solid #8c8e8e;
+    border-bottom: 1px solid var(--global-text-color);
     font-size: 1.2em;
 }
 
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
-    border-color: rgb(173 32 208);
+    border-color: var(--global-navtabs-hover);
 }
 
 a {
-    color: #8c8e8e;
+    color: var(--global-text-color);
+    transition: all 1s;
 }
 
 a:hover{
-    color:goldenrod;
+    color: var(--global-a-hover)!important;
 }
 
 .form-group {
@@ -114,27 +184,27 @@ a:hover{
 
 .form-control {
     background-color: Black;
-    color: #8c8e8e;
-    border: 1px solid goldenrod;
+    color: var(--global-text-color);
+    border: 1px solid var(--global-border-color);
 }
 
 .form-control:focus {
   background-color: Black;
-  color: #8c8e8e;
-  border-color: goldenrod;
+  color: var(--global-text-color);
+  border-color: var(--global-border-color);
 }
 
 .btn-primaryCustom {
-    color: #fff;
-    background-color: darkgoldenrod;
-    border-color: goldenrod;
+    color: var(--global-list-item-color);
+    background-color: var(--global-button-color);
+    border-color: var(--global-border-color);
     width: 332px;
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: darkgoldenrod;
-    border-color: goldenrod;
+    color: var(--global-list-item-color);
+    background-color: var(--global-button-color);
+    border-color: var(--global-border-color);
 }
 
 .remove{
@@ -180,8 +250,8 @@ a:hover{
     position: relative;
     display: grid;
     padding: .75rem 1.25rem;
-    background-color: goldenrod;
-    color:white;
+    background-color: var(--global-button-color);
+    color:var(--global-list-item-color);
     width: 19.1em;
     height: 2.1em;
     border: 1px solid rgba(0,0,0,.125);
@@ -194,7 +264,7 @@ a:hover{
 
 .dropdown-menu.show {
     display: block;
-    background-color:goldenrod;
+    background-color:var(--global-button-color);
 }
 
 input.btn.btn-secondary.btn-lg.dropdown-toggle {
@@ -202,7 +272,7 @@ input.btn.btn-secondary.btn-lg.dropdown-toggle {
 }
 
 .btn-secondary {
-    color: white;
+    color: var(--global-list-item-color);
     background-color: #343a40;
     border-color: #343a40;
 }
@@ -231,7 +301,7 @@ input.btn.btn-secondary.btn-lg.dropdown-toggle {
     right: 5%;
     width: 90%;
     height: 1px;
-    background-image: linear-gradient(to right, transparent, rgb(173 32 208), transparent);
+    background-image: linear-gradient(to right, transparent, var(--global-divider-color), transparent);
 }
 
 .div-arrow-down:after {
@@ -243,9 +313,9 @@ input.btn.btn-secondary.btn-lg.dropdown-toggle {
     width: 14px;
     height: 14px;
     transform: rotate(45deg);
-    background-color: white;
-    border-bottom: 1px solid rgb(173 32 208);
-    border-right: 1px solid rgb(173 32 208);
+    background-color: var(--global-list-item-color);
+    border-bottom: 1px solid var(--global-divider-color);
+    border-right: 1px solid var(--global-divider-color);
 }
 
 .div-tab-down:after {
@@ -256,10 +326,10 @@ input.btn.btn-secondary.btn-lg.dropdown-toggle {
     left: calc(50% - 10px);
     width: 20px;
     height: 14px;
-    background-color: white;
-    border-bottom: 1px solid rgb(173 32 208);
-    border-left: 1px solid rgb(173 32 208);
-    border-right: 1px solid rgb(173 32 208);
+    background-color: var(--global-list-item-color);
+    border-bottom: 1px solid var(--global-divider-color);
+    border-left: 1px solid var(--global-divider-color);
+    border-right: 1px solid var(--global-divider-color);
     border-radius: 0 0 8px 8px;
 }
 
@@ -271,9 +341,9 @@ input.btn.btn-secondary.btn-lg.dropdown-toggle {
     left: calc(50% - 7px);
     width: 14px;
     height: 12px;
-    background-color: white;
-    border-left: 1px solid rgb(173 32 208);
-    border-right: 1px solid rgb(173 32 208);
+    background-color: var(--global-list-item-color);
+    border-left: 1px solid var(--global-divider-color);
+    border-right: 1px solid var(--global-divider-color);
 }
 
 .div-dot:after {
@@ -284,8 +354,8 @@ input.btn.btn-secondary.btn-lg.dropdown-toggle {
     left: calc(50% - 9px);
     width: 18px;
     height: 18px;
-    background-color: goldenrod;
-    border: 1px solid rgb(173 32 208);
+    background-color: var(--global-button-color);
+    border: 1px solid var(--global-divider-color);
     border-radius: 50%;
     box-shadow: inset 0 0 0 2px black, 0 0 0 4px black;
 }
@@ -417,13 +487,13 @@ nav#navbar-example3 {
 }
 
 .countach {
-    font-family: Roboto, "Helvetica Neue";
+    font-family: var(--global-font-family);
     font-weight: normal;
     font-size: 1.2em;
 }
 
 .tilda-petite {
-	font-family: Roboto, "Helvetica Neue";;
+	font-family: var(--global-font-family);
 	font-weight: 400;
 	font-style: normal;
 }

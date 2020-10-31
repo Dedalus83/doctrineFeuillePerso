@@ -5,7 +5,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=infoperso;charset=utf8', 'root', '')
 if (isset($_POST['valider'])) {
     $pseudoConnect = htmlspecialchars($_POST['pseudoconnect']);
     $passConnect = sha1($_POST['passconnect']);
-    if (!empty($pseudoConnect) AND !empty($passConnect)) {
+    if (!empty($pseudoConnect) and !empty($passConnect)) {
         $resUser = $bdd->prepare("SELECT * FROM users WHERE pseudo = ? AND pass = ?");
         $resUser->execute(array($pseudoConnect, $passConnect));
         $userExist = $resUser->rowCount();
@@ -51,13 +51,13 @@ if (isset($_POST['valider'])) {
 </div>
             </form>
             <?php
-            if (isset($erreur)) {
-                echo '<div class="error">' . $erreur . "</div>";
-            }
-            ?>
+if (isset($erreur)) {
+    echo '<div class="error">' . $erreur . "</div>";
+}
+?>
         </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
 </html>

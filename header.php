@@ -13,6 +13,9 @@
         <li class="nav-item">
             <a class="nav-link" href="connexion-user.php">connexion</a>
         </li>
+        <li class="nav-item">
+            <span id="theme-toggle" class="theme-toggle nav-link"></span>
+        </li>
       </ul>
       </form>
     </div>

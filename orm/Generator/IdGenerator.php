@@ -31,16 +31,6 @@ class IdGenerator extends AbstractIdGenerator
         $connection = $em->getConnection();
         $rows = $connection->fetchAll("SELECT * FROM $tableName WHERE id = '$uuid'");
 
-
-        // $queryBuilder = $em->createQueryBuilder();
-
-        //     $queryBuilder->select('u')
-        //         ->from(CharacterMagie::class, 'u')
-        //         ->where('u.id = :id');
-        //          $query = $queryBuilder->getQuery();
-        //          $resultat = $query->execute([ "id" => $uuid ]);
-
-        // if (null !== $em->getRepository($classFullName)->findOneBy(['id' => $uuid]) && $em->getRepository($classFullName)->findOneBy([$resultat => $uuid])) {
         if(count($rows) != 0){
             $uuid = $this->generate($em, $entity);
         }
