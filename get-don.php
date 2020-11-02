@@ -7,7 +7,7 @@
                <button class="btn btn-danger remove" name="remove" value="remove">X</button>
           </form> 
           <div class="col-11">
-               <p><span class="border border-primary custom" <?= dynamicInputAttributes("nom", $don); ?>><?=htmlentities($don->getNom())?></p></span>
+               <p><span class="border border-primary custom" <?= dynamicInputAttributes("nom", $don); ?>><?=htmlentities($don->getNom())?></span></p>
           </div>
      </div>
      <p>Description: <span class="border border-primary" <?= dynamicInputAttributes("description", $don); ?>><?=htmlentities($don->getDescription())?></span></p>
