@@ -9,9 +9,10 @@
     --global-border-color: goldenrod;
     --global-button-color: goldenrod;
     --global-list-item-color: white;
+    --global-label-color:#8c8e8e;
     --global-navtabs-hover: rgb(173 32 208);
     --global-divider-color: rgb(173 32 208);
-    --global-bg-image:url("");
+    --global-bg-image:url("royal.png");
     --global-theme-toggle-content: 'ROYAL';
 }
 
@@ -34,6 +35,7 @@ body[data-theme='furia'] {
     --global-border-color:  rgb(214 118 17);
     --global-button-color: rgb(214 118 17);
     --global-list-item-color: white;
+    --global-label-color:white;
     --global-navtabs-hover: rgb(214 118 17);
     --global-bg-image:url('furia.png');
     --global-divider-color: red;
@@ -72,6 +74,10 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+}
+
+label{
+    color: var(--global-label-color);
 }
 
 .border-primary {
