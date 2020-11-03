@@ -19,7 +19,7 @@ if (isset($_POST['valider'])) {
             $erreur = "Mauvais pseudo ou mot de passe !";
         }
     } else {
-        $erreur = "Tous les champs doivent être complétés !";
+        $erreur = "Tous les champs doivent être complétés. Pas encore inscrit? <a href='create-user.php'>cliquez ici</a>";
     }
 }
 ?>

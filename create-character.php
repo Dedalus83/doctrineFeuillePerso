@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     
-    header("Location:connexion-user.php?id=" . $_SESSION['id']);
+    header("Location:index.php?id=" . $_SESSION['id']);
   }
 
 ?>

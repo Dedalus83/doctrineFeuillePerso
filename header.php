@@ -10,9 +10,9 @@
         <li class="nav-item active">
           <a class="nav-link" href="http://origine.epizy.com">Accueil <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="connexion-user.php">connexion</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="deconnexion-user.php">Deconnexion</a>
+          </li>
         <li class="nav-item">
             <span id="theme-toggle" class="theme-toggle nav-link"></span>
         </li>
@@ -22,3 +22,4 @@
   </nav>
 </div>
 </header>
+
