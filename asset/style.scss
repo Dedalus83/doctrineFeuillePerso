@@ -37,6 +37,25 @@ body[data-theme='furia'] {
     --global-theme-toggle-content: 'FURIA';
 }
 
+body[data-theme='minimal'] {
+    --global-bg-color: white;
+    --global-text-color: black;
+    --global-link-color: blue;
+    --global-a-hover: rgb(92, 92, 192);
+    --global-link-hover: rgb(255, 255, 255);
+    --global-border-color: rgb(214 118 17);
+    --global-button-color: rgb(214 118 17);
+    --global-list-item-color: white;
+    --global-label-color: white;
+    --global-navtabs-hover: rgb(214 118 17);
+    --skintone-color: #DE9B72;
+    --dark-color: #3A3D3E;
+    --global-divider-color: red;
+    --global-theme-toggle-bg: rgb(214 118 17);
+    --global-bg-image: url('furia.png');
+    --global-theme-toggle-content: 'MINIMAL';
+}
+
 .theme-toggle {
     position: fixed;
     right: 63px;
@@ -62,7 +81,7 @@ body {
     color: #212529;
     text-align: left;
     background: var(--global-bg-color);
-    transition: all 1s;
+    transition: all 5s;
     background-image: var(--global-bg-image);
     background-repeat: no-repeat;
     background-position: center;
@@ -171,7 +190,7 @@ div#navcss {
 
 a {
     color: var(--global-text-color);
-    transition: all 1s;
+    transition: all 5s;
 }
 
 a:hover {

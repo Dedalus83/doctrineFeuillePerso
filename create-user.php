@@ -2,7 +2,7 @@
 $entityManager = require_once join(DIRECTORY_SEPARATOR, [__DIR__, 'bootstrap.php']);
 
 use orm\Entity\User;
-
+password_hash("rasmuslerdorf", PASSWORD_DEFAULT);
 if(isset($_POST['valider'])) {
    $nom = htmlspecialchars($_POST['nom']);
    $prenom =htmlspecialchars($_POST['prenom']);

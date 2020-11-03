@@ -6,13 +6,14 @@ function toggleTheme () {
       return
   }
   bodyTag.setAttribute("data-theme", "furia")
+  
   $dataTheme = bodyTag.getAttribute("data-theme")
   if($dataTheme == "furia"){
     window.localStorage.setItem("site-theme", $dataTheme)
   }
 }
 
-function applyInitialTheme () {
+function applyTheme () {
     const theme = window.localStorage.getItem("site-theme")
     if (theme !== "") {
         const bodyTag = document.getElementsByTagName("body")[0]
@@ -20,7 +21,7 @@ function applyInitialTheme () {
     }
 }
 
-applyInitialTheme();
+applyTheme();
 
 document
     .getElementById("theme-toggle")
