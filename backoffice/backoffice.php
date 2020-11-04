@@ -5,7 +5,7 @@ require('nav-categories.php');
 
 use orm\Entity\User;
 
-require '../function.php';
+require('../function.php');
 
 $entityManager = require_once join(DIRECTORY_SEPARATOR, [__DIR__, '../bootstrap.php']);
 

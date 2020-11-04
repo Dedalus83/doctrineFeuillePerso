@@ -1,6 +1,6 @@
 <?php
 session_start();
-$entityManager = require_once join(DIRECTORY_SEPARATOR, [__DIR__, 'bootstrap.php']);
+$entityManager = require_once join(DIRECTORY_SEPARATOR, [__DIR__, '../../bootstrap.php']);
 
 use orm\Entity\Character;
 use orm\Entity\User;
@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     
-    header("Location:index.php?id=" . $_SESSION['id']);
+    header("Location:../../index.php?id=" . $_SESSION['id']);
   }
 
 ?>
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Create Character</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="asset/style.scss">
+        <link rel="stylesheet" href="../../asset/style.scss">
     </head>
     <body>
     <div class="container">

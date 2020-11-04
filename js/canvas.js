@@ -8,7 +8,7 @@ let draw =  {
         this.canvasDiv = document.getElementById('canvasDiv');
         this.canvas = document.createElement('canvas');
         this.canvas.setAttribute('width', "2100px");
-        this.canvas.setAttribute('height', "955px");
+        this.canvas.setAttribute('height', "945px");
         this.canvas.setAttribute('id', 'canvas');
         this.canvasDiv.appendChild(this.canvas);
         if(typeof G_vmlCanvasManager !== 'undefined') {

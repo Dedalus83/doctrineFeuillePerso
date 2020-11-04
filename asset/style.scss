@@ -3,7 +3,7 @@
     --global-font-family: Roboto, "Helvetica Neue";
     --global-text-color: #8c8e8e;
     --global-link-color: #8c8e8e;
-    --global-link-hover: goldenrod;
+    --global-link-hover: rgb(173 32 208);
     --global-a-hover: rgb(173 32 208);
     --global-theme-toggle-bg: goldenrod;
     --global-border-color: goldenrod;
@@ -94,6 +94,18 @@ label {
     border-color: var(--global-border-color);
 }
 
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: var(--global-link-hover);
+    border-color: var(--global-link-hover);
+}
+
+.btn-primary:hover{
+    color: #fff;
+    background-color: var(--global-link-hover);
+    border-color: var(--global-link-hover);
+}
+
 p {
     margin-left: 3em;
     margin-right: 3em;
@@ -181,7 +193,7 @@ div#navcss {
 
 a {
     color: var(--global-text-color);
-    transition: all 5s;
+    transition: all 3s;
 }
 
 a:hover {

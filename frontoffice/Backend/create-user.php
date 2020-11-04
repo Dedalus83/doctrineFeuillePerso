@@ -1,8 +1,8 @@
 <?php
-$entityManager = require_once join(DIRECTORY_SEPARATOR, [__DIR__, 'bootstrap.php']);
+$entityManager = require_once join(DIRECTORY_SEPARATOR, [__DIR__, '../../bootstrap.php']);
 
 use orm\Entity\User;
-password_hash("rasmuslerdorf", PASSWORD_DEFAULT);
+
 if(isset($_POST['valider'])) {
    $nom = htmlspecialchars($_POST['nom']);
    $prenom =htmlspecialchars($_POST['prenom']);
@@ -69,7 +69,7 @@ if(isset($_POST['valider'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Inscription</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="asset/style.scss">
+        <link rel="stylesheet" href="../../asset/style.scss">
     </head>
     <body>
     <div class="container">

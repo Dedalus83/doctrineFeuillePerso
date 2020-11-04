@@ -1,6 +1,5 @@
 <?php
 
-
 use orm\Entity\Argent;
 use orm\Entity\Notebook;
 use orm\Entity\Contact;
@@ -257,4 +256,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die();       
   }
  ?>
-

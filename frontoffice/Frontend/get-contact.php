@@ -4,4 +4,4 @@
 <p>CHANCE DE DECROCHER: <span class="border border-primary" <?= dynamicInputAttributes("chance", $contact, 'number'); ?>><?=htmlentities($contact->getChance())?> %</span></p>
 <?php } ?>
 
-<?php require('create-contact.php'); ?>
+<?php require('../Backend/create-contact.php'); ?>

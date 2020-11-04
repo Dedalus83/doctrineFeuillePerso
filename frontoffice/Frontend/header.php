@@ -14,7 +14,7 @@
             <a class="nav-link" href="map.php">Carte</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="deconnexion-user.php">Deconnexion</a>
+            <a class="nav-link" href="../Backend/deconnexion-user.php">Deconnexion</a>
           </li>
         <li class="nav-item">
             <span id="theme-toggle" class="theme-toggle nav-link"></span>

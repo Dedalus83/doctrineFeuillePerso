@@ -1,5 +1,5 @@
 if(typeof(EventSource) !== "undefined") {
-    var source = new EventSource("reload.php");
+    var source = new EventSource("../../reload.php");
     source.onmessage = function(event) {
         try{
             const data = JSON.parse(event.data);

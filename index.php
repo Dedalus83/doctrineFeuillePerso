@@ -14,12 +14,12 @@ if (isset($_POST['valider'])) {
             $_SESSION['id'] = $userInfo['id'];
             $_SESSION['pseudo'] = $userInfo['pseudo'];
             $_SESSION['mail'] = $userInfo['email'];
-            header("Location:characterPage.php?id=" . $_SESSION['id']);
+            header("Location:frontoffice/Frontend/characterPage.php?id=" . $_SESSION['id']);
         } else {
             $erreur = "Mauvais pseudo ou mot de passe !";
         }
     } else {
-        $erreur = "Tous les champs doivent être complétés. Pas encore inscrit? <a href='create-user.php'>cliquez ici</a>";
+        $erreur = "Tous les champs doivent être complétés. Pas encore inscrit? <a href='frontoffice/Backend/create-user.php'>cliquez ici</a>";
     }
 }
 ?>

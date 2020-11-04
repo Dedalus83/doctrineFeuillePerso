@@ -1,5 +1,4 @@
 <?php
-# cli-config.php
 
 $entityManager = require_once join(DIRECTORY_SEPARATOR, [__DIR__, 'bootstrap.php']);
 
