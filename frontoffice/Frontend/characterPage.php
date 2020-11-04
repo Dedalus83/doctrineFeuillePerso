@@ -49,7 +49,7 @@ Use orm\service\CharacterSheetService;
       <button class='btn btn-primaryCustom' type='submit' name='validate' value='valider'>Ajouter une Magie</button>
          </div>
      </form>
-    <?php require("get-magie.php");?>  
+    <?php require("get-magic.php");?>  
  </div>
 
  <div class="tab" data-title="<?= CharacterSheetService::TAB_COMPETENCE ?>">
@@ -64,7 +64,7 @@ Use orm\service\CharacterSheetService;
          <button class='btn btn-primaryCustom' type='submit' name='validateSkill' value='valider'>Ajouter une Compétence</button>
       </div>
    </form>
-    <?php require("get-competence.php");?>
+    <?php require("get-skill.php");?>
  </div>
 
  <div class="tab" data-title="<?= CharacterSheetService::TAB_DON ?>">
@@ -79,7 +79,7 @@ Use orm\service\CharacterSheetService;
          <button class='btn btn-primaryCustom' type='submit' name='validateGift' value='valider'>Ajouter un Don</button>
       </div>
    </form>
-    <?php require("get-don.php");?>
+    <?php require("get-gift.php");?>
  </div>
 
  <div class="tab" data-title="<?= CharacterSheetService::TAB_ARME ?>">
@@ -94,7 +94,7 @@ Use orm\service\CharacterSheetService;
          <button class='btn btn-primaryCustom' type='submit' name='validateWeapon' value='valider'>Ajouter une Arme</button>
       </div>
    </form>
-    <?php require("get-arme.php");?>
+    <?php require("get-weapon.php");?>
  </div>
 
  <div class="tab" data-title="<?= CharacterSheetService::TAB_ARMURE ?>">
@@ -109,11 +109,11 @@ Use orm\service\CharacterSheetService;
          <button class='btn btn-primaryCustom' type='submit' name='validateArmor' value='valider'>Ajouter une Armure</button>
       </div>
    </form>
-    <?php require("get-armure.php");?>
+    <?php require("get-armor.php");?>
  </div>
 
  <div class="tab" data-title="<?= CharacterSheetService::TAB_ARGENT ?>">
-    <?php require("get-argent.php");?>
+    <?php require("get-money.php");?>
  </div>
 
  <div class="tab" data-title="<?= CharacterSheetService::TAB_INVENTAIRE ?>">
@@ -128,7 +128,7 @@ Use orm\service\CharacterSheetService;
          <button class='btn btn-primaryCustom' type='submit' name='validateInventory' value='valider'>Ajouter un Objet</button>
       </div>
    </form>
-    <?php require("get-inventaire.php");?>
+    <?php require("get-inventory.php");?>
  </div>
 
  <div class="tab" data-title="<?= CharacterSheetService::TAB_CONTACT ?>">

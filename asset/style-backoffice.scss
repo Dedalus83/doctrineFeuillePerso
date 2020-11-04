@@ -37,7 +37,7 @@ form {
 .sidenav {
     height: 100%;
     width: 0;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     top: 19.3em;
     left: 0;
@@ -80,34 +80,11 @@ form {
     display: none;
   }
 
-  
-  
-  @media screen and (max-height: 450px) {
-    .sidenav {
-        top: 6em;
-        padding-top: 15px;
-        display: initial;
-      }
-    .sidenav a {font-size: 18px;}
+  @media screen and (min-device-width: 997px) and (max-device-width: 1600px){
 
-    .sidenav .closebtn {
-        display: initial;
-      }
-  }
-
- 
-
-  @media screen and (min-height: 500px) and (max-device-width: 995px) {
-    .sidenav {
-        top: 25.3em;
-        padding-top: 15px;
-        display: initial;
-      }
-    .sidenav a {font-size: 18px;}
-
-    .sidenav .closebtn {
-        display: initial;
-      }
+    .offset-md-2 {
+      margin-left: 24.666667%;
+    }
   }
 
   @media screen and (max-device-width: 996px){
@@ -134,3 +111,44 @@ form {
       }
     .sidenav a {font-size: 18px;}
   }
+  
+  @media screen and (min-width: 500px) and (max-device-width: 995px) {
+    .sidenav {
+        top: 6em;
+        padding-top: 15px;
+        display: initial;
+      }
+    .sidenav a {font-size: 18px;}
+
+    .sidenav .closebtn {
+        display: initial;
+      }
+  }
+
+  @media screen and (min-width: 398px) and (max-width: 450px) {
+    .sidenav {
+        top: 6em;
+        padding-top: 15px;
+        display: initial;
+      }
+    .sidenav a {font-size: 18px;}
+
+    .sidenav .closebtn {
+        display: initial;
+      }
+  }
+
+  @media screen and (max-width: 397px) {
+    .sidenav {
+        top: 9em;
+        padding-top: 15px;
+        display: initial;
+      }
+    .sidenav a {font-size: 18px;}
+
+    .sidenav .closebtn {
+        display: initial;
+      }
+  }
+
+  

@@ -10,6 +10,7 @@
     --global-button-color: goldenrod;
     --global-list-item-color: white;
     --global-label-color: #8c8e8e;
+    --global-dropdown-color:#755c0f;
     --global-navtabs-hover: rgb(173 32 208);
     --global-divider-color: rgb(173 32 208);
     --skintone-color: #DE9B72;
@@ -31,6 +32,7 @@ body[data-theme='furia'] {
     --global-navtabs-hover: rgb(214 118 17);
     --skintone-color: #DE9B72;
     --dark-color: #3A3D3E;
+    --global-dropdown-color:#381c08;
     --global-divider-color: red;
     --global-theme-toggle-bg: rgb(214 118 17);
     --global-bg-image: url('furia.png');
@@ -287,7 +289,7 @@ a:hover {
 
 .dropdown-menu.show {
     display: block;
-    background-color: var(--global-button-color);
+    background-color: var(--global-dropdown-color);
 }
 
 input.btn.btn-secondary.btn-lg.dropdown-toggle {

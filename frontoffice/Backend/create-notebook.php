@@ -3,8 +3,6 @@
   <div class="dropdown-menu">
 <form action="" method="post">
     <div class='col'>
-<h3 class='text-center'>Ajouter une note</h3>
-
 <div class="col">
     <input class="form-control form-control-sm" type="text" placeholder="Note" name="newsNote" required>
 </div>

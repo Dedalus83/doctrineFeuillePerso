@@ -9,14 +9,14 @@
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="http://localhost/phpmyadmin">Gestion base de donnée</a>
+  <a href="http://localhost/phpmyadmin" target = "_blank" >Gestion base de donnée</a>
   <a href="backoffice.php">Gestion joueur</a>
-  <a href="create-magie.php">Ajouter une magie</a>
-  <a href="create-don">Ajouter un don</a>
-  <a href="create-competence.php">Ajouter une compétence</a>
-  <a href="create-arme.php">Ajouter une arme</a>
-  <a href="create-armure.php">Ajouter une armure</a>
-  <a href="create-inventaire.php">Ajouter un objet</a>
+  <a href="create-magic.php">Ajouter une magie</a>
+  <a href="create-gift.php">Ajouter un don</a>
+  <a href="create-skill.php">Ajouter une compétence</a>
+  <a href="create-weapon.php">Ajouter une arme</a>
+  <a href="create-armor.php">Ajouter une armure</a>
+  <a href="create-inventory.php">Ajouter un objet</a>
 
 
 </div>

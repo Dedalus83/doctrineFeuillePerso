@@ -4,8 +4,6 @@
 
 <form action="" method="post">
     <div class='col'>
-<h3 class='text-center'>Ajouter un contact</h3>
-
 <div class="col">
     <label for="nameContact">Nom: </label>
     <input class="form-control form-control-sm" type="text" placeholder="Nom" name="nameContact" required>
