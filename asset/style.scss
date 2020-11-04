@@ -37,23 +37,12 @@ body[data-theme='furia'] {
     --global-theme-toggle-content: 'FURIA';
 }
 
-body[data-theme='minimal'] {
-    --global-bg-color: white;
-    --global-text-color: black;
-    --global-link-color: blue;
-    --global-a-hover: rgb(92, 92, 192);
-    --global-link-hover: rgb(255, 255, 255);
-    --global-border-color: rgb(214 118 17);
-    --global-button-color: rgb(214 118 17);
-    --global-list-item-color: white;
-    --global-label-color: white;
-    --global-navtabs-hover: rgb(214 118 17);
-    --skintone-color: #DE9B72;
-    --dark-color: #3A3D3E;
-    --global-divider-color: red;
-    --global-theme-toggle-bg: rgb(214 118 17);
-    --global-bg-image: url('furia.png');
-    --global-theme-toggle-content: 'MINIMAL';
+.theme-map {
+    background: url('original.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .theme-toggle {
@@ -66,6 +55,7 @@ body[data-theme='minimal'] {
     font-size: 0.8rem;
     font-weight: 700;
     cursor: pointer;
+    content: var(--global-theme-toggle-content);
 }
 
 .theme-toggle::after {
@@ -86,6 +76,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    background-size: cover;
 }
 
 label {
@@ -261,7 +252,7 @@ a:hover {
     position: fixed;
     top: 0;
     right: 50.5em;
-    left: 12.2em;
+    left: 15.2em;
     z-index: 1030;
     padding-top: 0.3em;
 }
