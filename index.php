@@ -34,7 +34,7 @@ if (isset($_POST['valider'])) {
     <body>
         <div class="container">
             <br /><br /><br />
-            <h1>CONNEXION</h1>
+            <h1>CONNEXION</h1> 
             <br /><br /><br /><br /><br /><br /><br />
             <form method="POST" action="">
                 <div class="col">
