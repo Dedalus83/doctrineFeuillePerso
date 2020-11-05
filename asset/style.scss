@@ -81,6 +81,14 @@ body {
     background-size: cover;
 }
 
+.bgIndex{
+    background-image: url("origine2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: contain;
+}
+
 label {
     color: var(--global-label-color);
 }

@@ -13,16 +13,19 @@ Use orm\service\CharacterSheetService;
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
       <link rel="stylesheet" href="../../asset/style.scss">
    </head>
-   <body class="theme-map">
+   <body data-theme="" class="theme-map">
       <?php require('header.php') ?>
+      <input type="hidden" id="result">
         <div class="cadre" id="canvasDiv">
            
         </div>
+        
         <input id="clearCanvasSimple" class="btn btn-danger" type="button" onclick="draw.clear()" width=100 value="RESET">
+        <input id="save-to-local-storage" class="btn btn-primary" type="button" value="Save to local storage">
    </body>
+      <script src="../../js/theme.js"></script>
       <script src="../../js/canvas.js"></script>
-      <script type="../../js/text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="../../js/nav-tabs.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="../../js/modifyScript.js"></script>
       <script src="../../js/sse.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

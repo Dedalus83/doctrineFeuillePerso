@@ -50,7 +50,7 @@ let draw =  {
       
             this.context.strokeStyle = "#333";
             this.context.lineJoin = "round";
-            this.context.lineWidth = 8;
+            this.context.lineWidth = 5;
       
             for(var i=0; i < this.clickX.length; i++) {      
                 this.context.beginPath();
@@ -62,6 +62,7 @@ let draw =  {
                 this.context.lineTo(this.clickX[i], this.clickY[i]);
                 this.context.closePath();
                 this.context.stroke();
+                
             }
     },
             clear:function(){
@@ -74,8 +75,16 @@ let draw =  {
 
     document.addEventListener("DOMContentLoaded", () => {
     draw.init();
+
+
+    $drawingCurrent = document.getElementsByTagName('canvas');
+    $('#save-to-local-storage').click(function () {
+        window.localStorage.setItem('canvas_save', JSON.stringify($drawingCurrent)); 
+      });
+    
+      // check if localstorage has an array of strokes saved 
+    // if(window.localStorage.getItem('canvas_save')) { 
+    //     $drawingCurrent = JSON.parse(localStorage.getItem('canvas_save'));
+    //     redraw();
+    //  }
 });
-
-$dataDraw = draw.toDataURL();
-
-window.localStorage("data-draw", $dataDraw);

@@ -31,7 +31,7 @@ if (isset($_POST['valider'])) {
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="asset/style.scss">
     </head>
-    <body>
+    <body class="bgIndex">
         <div class="container">
             <br /><br /><br />
             <h1>CONNEXION</h1> 
