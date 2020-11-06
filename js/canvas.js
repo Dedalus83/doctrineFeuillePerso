@@ -8,7 +8,7 @@ let draw =  {
         this.canvasDiv = document.getElementById('canvasDiv');
         this.canvas = document.createElement('canvas');
         this.canvas.setAttribute('width', "2100px");
-        this.canvas.setAttribute('height', "945px");
+        this.canvas.setAttribute('height', "970px");
         this.canvas.setAttribute('id', 'canvas');
         this.canvasDiv.appendChild(this.canvas);
         if(typeof G_vmlCanvasManager !== 'undefined') {
@@ -46,7 +46,7 @@ let draw =  {
         this.clickDrag.push(dragging); 
     },
     redraw:function(){
-            this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height); // Clears the canvas
+            this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height);
       
             this.context.strokeStyle = "#333";
             this.context.lineJoin = "round";
@@ -83,8 +83,8 @@ let draw =  {
       });
     
       // check if localstorage has an array of strokes saved 
-    if(window.localStorage.getItem('canvas_save')) { 
-        $drawingCurrent = JSON.parse(localStorage.getItem('canvas_save'));
-        redraw();
-     }
+    // if(window.localStorage.getItem('canvas_save')) { 
+    //     $drawingCurrent = JSON.parse(localStorage.getItem('canvas_save'));
+    //     redraw();
+    //  }
 });

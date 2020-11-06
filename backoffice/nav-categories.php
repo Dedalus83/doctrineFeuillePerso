@@ -11,6 +11,7 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="http://localhost/phpmyadmin" target = "_blank" >Gestion base de donnée</a>
   <a href="backoffice.php">Gestion joueur</a>
+  <a href="table-loot.php">Table des loots</a>
   <a href="create-magic.php">Ajouter une magie</a>
   <a href="create-gift.php">Ajouter un don</a>
   <a href="create-skill.php">Ajouter une compétence</a>

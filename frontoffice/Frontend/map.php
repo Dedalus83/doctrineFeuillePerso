@@ -16,11 +16,13 @@ Use orm\service\CharacterSheetService;
    <body data-theme="" class="theme-map">
       <?php require('header.php') ?>
       <input type="hidden" id="result">
+      
         <div class="cadre" id="canvasDiv"></div>
-        
+    
         <input id="clearCanvasSimple" class="btn btn-danger" type="button" onclick="draw.clear()" width=100 value="Effacer">
         <input id="save-to-local-storage" class="btn btn-primary" type="button" value="Enregistrer">
    </body>
+      
       <script src="../../js/theme.js"></script>
       <script src="../../js/canvas.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
