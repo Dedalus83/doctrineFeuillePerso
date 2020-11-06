@@ -43,7 +43,7 @@ let draw =  {
     addClick:function(x, y, dragging){
         this.clickX.push(x);
         this.clickY.push(y);
-        this.clickDrag.push(dragging);
+        this.clickDrag.push(dragging); 
     },
     redraw:function(){
             this.context.clearRect(0, 0, this.context.canvas.width, this.context.canvas.height); // Clears the canvas
@@ -83,8 +83,8 @@ let draw =  {
       });
     
       // check if localstorage has an array of strokes saved 
-    // if(window.localStorage.getItem('canvas_save')) { 
-    //     $drawingCurrent = JSON.parse(localStorage.getItem('canvas_save'));
-    //     redraw();
-    //  }
+    if(window.localStorage.getItem('canvas_save')) { 
+        $drawingCurrent = JSON.parse(localStorage.getItem('canvas_save'));
+        redraw();
+     }
 });
