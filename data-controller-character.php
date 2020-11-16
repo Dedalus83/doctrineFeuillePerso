@@ -208,7 +208,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           $entityManager->flush();
 
           $contactId = $create->getId();
-          $bdd = new PDO('mysql:host=localhost;dbname=infoperso;charset=utf8', 'root', '');
+          $bdd = new PDO('mysql:host=sql110.epizy.com;dbname=epiz_24953341_sheet;charset=utf8', 'epiz_24953341', '6ZLmj05b8Vdg');
           $requete = $bdd->query("UPDATE contacts SET character_id=$characterId WHERE id = $contactId");
           header("Location: characterPage.php?tab=".Contact::getTabTitle());
             die();
@@ -227,7 +227,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           $entityManager->flush();
 
           $noteId = $create->getId();
-          $bdd = new PDO('mysql:host=localhost;dbname=infoperso;charset=utf8', 'root', '');
+          $bdd = new PDO('mysql:host=sql110.epizy.com;dbname=epiz_24953341_sheet;charset=utf8', 'epiz_24953341', '6ZLmj05b8Vdg');
           $requete = $bdd->query("UPDATE notebook SET character_id=$characterId WHERE id = $noteId");
           header("Location: characterPage.php?tab=".Notebook::getTabTitle());
             die();

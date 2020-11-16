@@ -5,6 +5,7 @@ if(typeof(EventSource) !== "undefined") {
             const data = JSON.parse(event.data);
             toggle(data);
            
+           
         }catch(err){
 
         }

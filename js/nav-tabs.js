@@ -59,6 +59,4 @@
        const allButton = document.querySelectorAll("button");
         allButton.forEach($button => {
         $button.addEventListener('click', openTabWithName(params.get("tab")));
-    })
-     
-    
+    })   

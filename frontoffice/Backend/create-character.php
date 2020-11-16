@@ -6,7 +6,7 @@ use orm\Entity\Character;
 use orm\Entity\User;
 use orm\Entity\Argent;
 
-$bdd = new PDO('mysql:host=localhost;dbname=infoperso;charset=utf8', 'root', '');
+$bdd = new PDO('mysql:host=sql110.epizy.com;dbname=epiz_24953341_sheet;charset=utf8', 'epiz_24953341', '6ZLmj05b8Vdg');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     

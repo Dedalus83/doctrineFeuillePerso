@@ -65,26 +65,42 @@ let draw =  {
                 
             }
     },
-            clear:function(){
+    clear:function(){
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.clickX = new Array();
         this.clickY = new Array();
         this.clickDrag = new Array();
-    }
-    }
+    },
 
-    document.addEventListener("DOMContentLoaded", () => {
+    getData: function(){
+        return {
+            x: this.clickX,
+            y: this.clickY
+        };
+    },
+
+    loadData(data){
+        this.clickX = data.x;
+        this.clickY = data.y;
+    }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
     draw.init();
 
 
     $drawingCurrent = document.getElementsByTagName('canvas');
     $('#save-to-local-storage').click(function () {
-        window.localStorage.setItem('canvas_save', JSON.stringify($drawingCurrent)); 
-      });
+        // window.localStorage.setItem('canvas_save', JSON.stringify($drawingCurrent)); 
+
+        window.localStorage.setItem('canvas_save', JSON.stringify(draw.getData())); 
+    });
     
       // check if localstorage has an array of strokes saved 
-    // if(window.localStorage.getItem('canvas_save')) { 
-    //     $drawingCurrent = JSON.parse(localStorage.getItem('canvas_save'));
-    //     redraw();
-    //  }
+    if(window.localStorage.getItem('canvas_save')) { 
+        // $drawingCurrent = JSON.parse(localStorage.getItem('canvas_save'));
+        $drawingCurrent = JSON.parse(localStorage.getItem('canvas_save'));
+        draw.loadData($drawingCurrent);
+        draw.redraw();
+     }
 });
